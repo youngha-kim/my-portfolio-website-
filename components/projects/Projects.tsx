@@ -1,14 +1,17 @@
+import Subtitle from "../../components/ui/subtitle"
 const Projects = () => {
   return (
-  <div>
-    Hello world
+    <>
+     <article className = "bg-[rgb(28,128,159)] pt-20">
+    <Subtitle title = {"Projects"} txtColor = {"text-white"}/>
     <button >
       <a href='./read_me'>
         read_me
       </a>
-      </button>  
-  </div>)
-
+    </button>  
+    </article>
+  </>
+  )
 }
 
 export default Projects
