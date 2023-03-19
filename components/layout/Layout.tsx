@@ -6,7 +6,7 @@ type props = {
 function Layout(props: props) {
   return (
     <>
-      <div className = "relative bg-gradient-to-r from-violet-500 to-fuchsia-500">
+      <div className = "relative bg-gradient-to-r from-violet-500 to-fuchsia-500 ">
       <MainNavigation />
       </div>
       <main>{props.children}</main>

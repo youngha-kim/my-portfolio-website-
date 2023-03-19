@@ -1,7 +1,7 @@
 const Intro = () => {
   return (
     <>
-      <div className="flex-col items-centerm text-center">
+      <div className="flex-col items-center text-center">
         <div className="font text-5xl text-white mt-20 font-black">
           <p> - 김영하 -</p>
           <p className="mt-5">웹 프론트엔드 포트폴리오</p>
