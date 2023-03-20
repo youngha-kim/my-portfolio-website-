@@ -1,4 +1,4 @@
-import Subtitle from "../../components/ui/subtitle"
+import Subtitle from "../ui/subtitle"
 const Projects = () => {
   return (
     <>

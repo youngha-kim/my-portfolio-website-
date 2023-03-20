@@ -7,10 +7,11 @@ interface Skill {
   imgs: StaticImageData[];
 }
 
+
 const SinglSkill: FunctionComponent<Skill> = (props) => {
   return (
     <>
-      <div className="font-orange-200 text-center text-orange-600">{props.stack}</div>
+      <div className="font-orange-200 text-center text-orange-600 text-2xl font-black mb-6">{props.stack}</div>
       <hr></hr>
       <ul>
       {props.imgs.map((element, id) => {

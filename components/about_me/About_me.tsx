@@ -1,4 +1,4 @@
-import Subtitle from "../../components/ui/subtitle";
+import Subtitle from "../ui/subtitle";
 import MyInfo from "./myInfo";
 
 interface Personal {
