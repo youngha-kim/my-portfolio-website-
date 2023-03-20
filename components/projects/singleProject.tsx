@@ -1,29 +1,47 @@
 import { StaticImageData } from "next/image";
 import { FunctionComponent } from "react";
 import Image from "next/image";
-import Link from "next/link"
+import Link from "next/link";
+
+type sub = string[];
+
 interface Project {
-  img: StaticImageData;
-  link: string;
-  subtitle: string;
-  content: string[];
+  title: string;
+  duetime: string;
+  img: StaticImageData[];
+  mainContent: string[];
+  subContent: sub[];
 }
 const SingleProject: FunctionComponent<Project> = (props) => {
   return (
     <>
-      <div className="text-white">
-        {<Image src={props.img} alt="123123" />}
+      <div className="text-center mb-10">
+        <div>{props.title}</div>
+        <div>{props.duetime}</div>
       </div>
-      <Link href={props.link} passHref>{props.link}</Link>
-      <div>
-        {props.subtitle}
-      </div>
-      <div>
-        {props.content.map((element) => {return(
-          <>
-          <div>{element}</div>
-          </> 
-        )})}
+      <div className="flex row">
+        <div className="shrink-1">
+          {props.img.map((element) => (
+            <Image src={element} alt="123" />
+          ))}
+          <button>"^"</button>
+        </div>
+        <div>
+          <div>
+            {props.mainContent.map((element) => (
+              <div>{element}</div>
+            ))}
+          </div>
+          <button className="border-2">
+            <a href="./read_me">read_me</a>
+          </button>
+          <hr></hr>
+          <div>
+            {props.subContent.map((element) => (
+              <div>{`${element[0]} 그리고  ${element[1]}`}</div>
+            ))}
+          </div>
+        </div>
       </div>
     </>
   );
