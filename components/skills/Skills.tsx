@@ -1,4 +1,4 @@
-import Subtitle from "../ui/subtitle";
+import Subtitle from "../shared/subtitle";
 import SkillLists from "./skillLists";
 
 

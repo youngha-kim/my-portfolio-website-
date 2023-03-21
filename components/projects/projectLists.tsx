@@ -32,6 +32,23 @@ const projectArr: ProjectArray = [
       ["Deployment", "vercel"]
     ]
   },
+  {
+    title: "우리동네 스터디 Woodongs",
+    duetime: "<2022.10 4인 프로젝트>",
+    img: [notion],
+    mainContent: [
+      "내가 생각하는 나의 성격과 친구가 생각하는 나의 성격을 비교함으로써 겉으로 보이는 나의 모습이 어떠한지 파악해볼 수 있는 웹사이트입니다. 실제로 지인과 성격 검사를 서로 해주면서 얻은 아이디어를 바탕으로 직접 개발하였습니다.",
+      "백 엔드 개발자와 협업하는 과정에 관해 많이 배울 수 있었습니다. 필요한 명세를 문서로 작성하여 소통하였고, 필요한 지식도 함께 공유하며 학습할 수 있었습니다.",
+    ],
+    subContent : [
+      ["주요기능" , "어떠고 저쩌고 하기 "],
+      ["Github" , "www.어쩌고 저ㄱ쩌고 "],
+      ["URL", "www.woodongs.site"],
+      ["Frontend", "React.js, contextAPI, WebsocketAPI, styled-components "],
+      ["DB", "AWS"],
+      ["Deployment", "AWS"]
+    ]
+  },
 
 ];
 

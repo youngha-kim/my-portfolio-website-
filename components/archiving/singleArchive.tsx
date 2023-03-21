@@ -1,7 +1,7 @@
 import { StaticImageData } from "next/image";
 import { FunctionComponent } from "react";
 import Image from "next/image";
-import Link from "next/link"
+import Link from "next/link";
 interface Archieve {
   img: StaticImageData;
   link: string;
@@ -9,21 +9,22 @@ interface Archieve {
   content: string[];
 }
 const SingleArchieve: FunctionComponent<Archieve> = (props) => {
+    const {img, link, subtitle, content } = props
   return (
     <>
-      <div className="text-white">
-        {<Image src={props.img} alt="123123" />}
-      </div>
-      <Link href={props.link} passHref>{props.link}</Link>
+      <div className="text-white">{<Image src={img} alt="123123" />}</div>
+      <Link href={link} passHref target="_blank">
+        {link}
+      </Link>
+      <div>{subtitle}</div>
       <div>
-        {props.subtitle}
-      </div>
-      <div>
-        {props.content.map((element) => {return(
-          <>
-          <div>{element}</div>
-          </> 
-        )})}
+        {content.map((element) => {
+          return (
+            <>
+              <div>{element}</div>
+            </>
+          );
+        })}
       </div>
     </>
   );

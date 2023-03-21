@@ -1,7 +1,6 @@
 import { StaticImageData } from "next/image";
 import { FunctionComponent } from "react";
 import Image from "next/image";
-import Link from "next/link";
 
 type sub = string[];
 
@@ -13,22 +12,24 @@ interface Project {
   subContent: sub[];
 }
 const SingleProject: FunctionComponent<Project> = (props) => {
+  const { title, duetime, img, mainContent, subContent } = props;
+
   return (
     <>
       <div className="text-center mb-10">
-        <div>{props.title}</div>
-        <div>{props.duetime}</div>
+        <div>{title}</div>
+        <div>{duetime}</div>
       </div>
       <div className="flex row">
         <div className="shrink-1">
-          {props.img.map((element) => (
+          {img.map((element) => (
             <Image src={element} alt="123" />
           ))}
-          <button>"^"</button>
+          <button>123</button>
         </div>
         <div>
           <div>
-            {props.mainContent.map((element) => (
+            {mainContent.map((element) => (
               <div>{element}</div>
             ))}
           </div>
@@ -37,8 +38,8 @@ const SingleProject: FunctionComponent<Project> = (props) => {
           </button>
           <hr></hr>
           <div>
-            {props.subContent.map((element) => (
-              <div>{`${element[0]} 그리고  ${element[1]}`}</div>
+            {subContent.map((element) => (
+              <div>{`* ${element[0]}:  ${element[1]}`}</div>
             ))}
           </div>
         </div>

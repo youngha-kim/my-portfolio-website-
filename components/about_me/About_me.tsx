@@ -1,4 +1,4 @@
-import Subtitle from "../ui/subtitle";
+import Subtitle from "../shared/subtitle";
 import MyInfo from "./myInfo";
 
 interface Personal {
@@ -39,7 +39,7 @@ const personal_Info: Personal[] = [
 
 const About_me = () => {
   return (
-    <article className="bg-white-500 pt-20 pb-10 m-auto max-w-10xl">
+    <article className="bg-white pt-20 pb-10 m-auto max-w-10xl">
       <div className="mb-20">
         <Subtitle title={"About me"} txtColor={"text-black"} />
       </div>

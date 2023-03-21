@@ -1,4 +1,4 @@
-import Subtitle from "../ui/subtitle";
+import Subtitle from "../shared/subtitle";
 import ProjectList from "./projectLists";
 
 const Projects = () => {

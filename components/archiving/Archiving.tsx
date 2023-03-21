@@ -1,12 +1,12 @@
-import Subtitle from "../../components/ui/subtitle"
-import ArchiveList from "./archiveLists"
+import Subtitle from "../shared/subtitle";
+import ArchiveList from "./archiveLists";
 const Archiving = () => {
-  return(
+  return (
     <article className="bg-black pt-20 m-auto pb-10 m-auto max-w-10xl">
-    <Subtitle title = {"Archiving"} txtColor = {"text-white"}/>
-    <ArchiveList/>
-  </article>
-  )
-}
+      <Subtitle title={"Archiving"} txtColor={"text-white"} />
+      <ArchiveList />
+    </article>
+  );
+};
 
-export default Archiving
+export default Archiving;
