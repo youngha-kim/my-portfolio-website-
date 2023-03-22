@@ -21,8 +21,8 @@ const SingleProject: FunctionComponent<Project> = (props) => {
         <div className="text-3xl font-black mb-5">{title}</div>
         <div>{duetime}</div>
       </div>
-      <div className="flex flex-row">
-        <div className="basis-2/4 border-r-2">{useCarousel(img)}</div>
+      <div className="flex flex-col lg:flex-row">
+        <div className="basis-2/4 border-2 ">{useCarousel(img)}</div>
         <div className="basis-2/4">
           <div>
             {mainContent.map((element, id) => (
@@ -37,9 +37,9 @@ const SingleProject: FunctionComponent<Project> = (props) => {
           <hr></hr>
           <div>
             {subContent.map((element, id) => (
-              <div key={id} className="flex flex-row">
-                <span className="font-bold basis-1/4">{element[0]}</span>
-                <span className="basis-4/4">{element[1]}</span>
+              <div key={id} className="flex flex-row mb-2 ">
+                <span className="font-bold basis-1/4">[{element[0]}]</span>
+                <span className="basis-3/4 border-2">{element[1]}</span>
               </div>
             ))}
           </div>

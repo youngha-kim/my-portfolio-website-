@@ -15,7 +15,7 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 const useCarousel = (imgs: StaticImageData[]) => {
   return (
     <>
-      <div className="position w-96 z-0">
+      <div className="position w-full lg:w-96 z-0">
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
@@ -32,8 +32,8 @@ const useCarousel = (imgs: StaticImageData[]) => {
         >
           {imgs.map((element, id) => {
             return (
-              <SwiperSlide>
-                <div className="relative object-fill w-96 h-80 z-0">
+              <SwiperSlide key={id}>
+                <div className="relative object-fill w-fit h-80 z-0">
                   <Image key={id} src={element} alt="image" />
                 </div>
               </SwiperSlide>

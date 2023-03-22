@@ -38,7 +38,7 @@ const archieveArr: ArchieveArray = [
 const ArchiveList = () => {
   return (
     <>
-      <div className="flex justify-around m-auto max-w-4xl mt-8 ">
+      <div className="flex flex-col justify-around m-auto max-w-4xl mt-8 md:flex-row ">
         {archieveArr.map((element, id) => {
           return (
             <>

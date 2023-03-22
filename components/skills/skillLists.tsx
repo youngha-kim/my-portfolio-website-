@@ -52,7 +52,7 @@ const componentStyle =
 const SkillLists = () => {
   return (
     <>
-      <main className="flex justify-around m-auto max-w-2xl mt-8">
+      <main className="flex flex-col justify-around m-auto max-w-2xl mt-8 md:flex-row">
         <div>
           {stacks.map((element, id) => {
             return (

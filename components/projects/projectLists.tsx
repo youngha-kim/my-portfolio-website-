@@ -26,7 +26,7 @@ const projectArr: ProjectArray = [
       " 백 엔드 개발자와 협업하는 과정에 관해 많이 배울 수 있었습니다. 필요한 명세를 문서로 작성하여 소통하였고, 필요한 지식도 함께 공유하며 학습할 수 있었습니다.",
     ],
     subContent : [
-      ["주요기능" , "어떠고 저쩌고 하기 "],
+      ["주요기능" , "어떠고 저쩌고 하기 blar   blar   blar   blar   blarblar   blar   blar   blar   blarblar   blar   blar   blar   blarblar   blar   blar   blar   blarblar   blar   blar   blar   blarblar   blar   blar   blar   blarblar   blar   blar   blar   blarblar   blar   blar   blar   blar"],
       ["Github" , "www.어쩌고 저ㄱ쩌고 "],
       ["URL", "WWW.저쩌고 우쩌고"],
       ["Frontend", "next.js, typescript, tailwind css "],
@@ -44,7 +44,7 @@ const projectArr: ProjectArray = [
       " 백 엔드 개발자와 협업하는 과정에 관해 많이 배울 수 있었습니다. 필요한 명세를 문서로 작성하여 소통하였고, 필요한 지식도 함께 공유하며 학습할 수 있었습니다.",
     ],
     subContent : [
-      ["주요기능" , "어떠고 저쩌고 하기 "],
+      ["주요기능" , "blar   blar   blar   blar   blarblar   blar   blar   blar   blarblar   blar   blar   blar   blarblar   blar   blar   blar   blarblar   blar   blar   blar   blarblar   blar   blar   blar   blarblar   blar   blar   blar   blarblar   blar   blar   blar   blarblar   blar   blar   blar   blarblar   blar   blar   blar   blar"],
       ["Github" , "www.어쩌고 저ㄱ쩌고 "],
       ["URL", "www.woodongs.site"],
       ["Frontend", "React.js, contextAPI, WebsocketAPI, styled-components "],
