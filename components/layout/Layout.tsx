@@ -1,4 +1,4 @@
-import MainNavigation from "./MainNavigation";
+// import MainNavigation from "../navBar/MainNavigation";
 import type { ReactNode } from "react";
 type props = {
   children: ReactNode;
@@ -6,9 +6,9 @@ type props = {
 function Layout(props: props) {
   return (
     <>
-      <MainNavigation>
-        <main>{props.children}</main>
-      </MainNavigation>
+      <main>
+        {props.children}
+      </main>
     </>
   );
 }

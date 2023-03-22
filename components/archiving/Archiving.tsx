@@ -2,9 +2,11 @@ import Subtitle from "../shared/subtitle";
 import ArchiveList from "./archiveLists";
 const Archiving = () => {
   return (
-    <article className="bg-black pt-20 m-auto pb-10 m-auto max-w-10xl">
+    <article className="bg-gradient-to-r from-black to-gray-400 pt-20 m-auto pb-10 m-auto max-w-10xl">
       <Subtitle title={"Archiving"} txtColor={"text-white"} />
-      <ArchiveList />
+      <div>
+        <ArchiveList />
+      </div>
     </article>
   );
 };
