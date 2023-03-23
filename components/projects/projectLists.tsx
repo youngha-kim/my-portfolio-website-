@@ -64,7 +64,7 @@ const ProjectList = () => {
             <>
               <div
                 key={id}
-                className="border-2 bg-white m-10 p-10 max-h-fit rounded-2xl shadow-2xl "
+                className="border-2 bg-white m-10 mt-16 p-10 max-h-fit rounded-2xl shadow-2xl "
               >
                 <SingleProject
                   id = {element.id}
