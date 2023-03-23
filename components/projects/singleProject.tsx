@@ -27,7 +27,7 @@ const SingleProject: FunctionComponent<Project> = (props) => {
           <div>
             {mainContent.map((element, id) => (
               <p key={id} className="mb-4 text-lg">
-                {element}
+                {(element)}
               </p>
             ))}
           </div>
