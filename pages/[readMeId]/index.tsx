@@ -16,9 +16,10 @@ export interface ProjectDetail {
   stacks: Stacks;
   background: string[];
   meaning: string[];
-  URL: string;
+  deployment: string;
   image: StaticImageData;
   title?: string;
+  [key: string]: any
 }
 
 export const getStaticProps: GetStaticProps = (
@@ -49,7 +50,7 @@ export const getStaticProps: GetStaticProps = (
       frontend: ["react", "reactquery", "ty"],
       database: ["123"],
     },
-    URL: "www,blur blur blur lbrer blure.com",
+    deployment: "www.woodongs.site",
     image: notion,
   };
 
@@ -76,13 +77,13 @@ const ReadMePage = (props: ProjectDetail) => {
   return (
     <>
       <ReadMeDetail
+        deployment={props?.deployment}
+        outline={props?.outline}
+        background={props?.background}
+        stacks={props?.stacks}
+        meaning={props?.meaning}
         image={props?.image}
         title={props?.title}
-        background={props?.background}
-        outline={props?.outline}
-        meaning={props?.meaning}
-        stacks={props?.stacks}
-        URL={props?.URL}
       />
     </>
   );

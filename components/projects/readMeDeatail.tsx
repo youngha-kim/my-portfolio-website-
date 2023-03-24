@@ -1,64 +1,78 @@
 import { ProjectDetail } from "../../pages/[readMeId]/index";
+import useDetail from "./hooks/useDetail";
+import Link from "next/link";
 import Image from "next/image";
 
 const ReadMeDetail = (props: ProjectDetail) => {
+  const { title, deployment, outline, background, meaning, stacks } = props;
+  const propsKeys = Object.keys(props);
+  const { some } = useDetail(propsKeys, props);
+
   return (
     <>
       <nav className="bg-black text-white p-5 pl-20 text-xl">READ_ME</nav>
       <section className="bg-white p-20 pt-10 max-w-screen-2xl rounded-2xl shadow-2xl text-basic">
-        <h1 className="text-3xl mb-10 font-bold">{props.title}</h1>
+        <h1 className="text-3xl mb-10 font-bold">{title}</h1>
         <hr></hr>
         <div className="mt-5">
-          <div className="mt-10">
-            <h2 className="text-2xl font-bold">* Deployment URL</h2>
-            <div>{props.URL}</div>
+          <div className="mt-14">
+            <h2 className="text-2xl font-semibold">🟢 Deployment</h2>
+            <button className="text-xl ml-4 mt-4 text-blue-400">
+              <a href={deployment} target="_blank">
+                [{deployment}]
+              </a>
+            </button>
           </div>
-
-          <div className="mt-10">
-            <h2 className="text-2xl font-bold">* Outline</h2>
-            <div className="text-lg">
-              {props.outline.mainFunction.map((el, id) => (
+          <div className="mt-14">
+            <h2 className="text-2xl font-semibold">🟡 Outline</h2>
+            <div className="text-lg ml-4 mt-4">
+              {outline.description.map((el, id) => (
                 <div key={id}>{el}</div>
               ))}
             </div>
-            <h3 className="text-xl font-bold">주요 기능</h3>
-            <div className="text-lg">
-              {props.outline.description.map((el, id) => (
-                <div key={id}>{el}</div>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-10">
-            {" "}
-            <h2 className="text-2xl font-bold">* Background</h2>
-            <div className="text-lg">
-              {props.background.map((el, id) => (
+            <h3 className="text-xl font-bold mt-4 pl-4">{`★ 주요 기능`}</h3>
+            <div className="text-lg ml-4 mt-2">
+              {outline.mainFunction.map((el, id) => (
                 <div key={id}>{el}</div>
               ))}
             </div>
           </div>
 
-          <div className="mt-10">
-            <h2 className="text-2xl font-bold">* Meaning</h2>
-            <div className="text-lg">
-              {props.meaning.map((el, id) => (
+          <div className="mt-14">
+            <h2 className="text-2xl font-semibold">🟣 Background</h2>
+            <div className="text-lg ml-4 mt-4">
+              {background.map((el, id) => (
                 <div key={id}>{el}</div>
               ))}
             </div>
           </div>
 
-          <div className="mt-10">
-            <h2 className="text-2xl font-bold">* Stacks</h2>
-            <div className="text-lg">
-              {Object.entries(props.stacks).map((el ,id) => {
+          <div className="mt-14">
+            <h2 className="text-2xl font-semibold">🟠 Meaning</h2>
+            <div className="text-lg ml-4 mt-4">
+              {meaning.map((el, id) => (
+                <div key={id}>{el}</div>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-14">
+            <h2 className="text-2xl font-semibold">🔵 Stacks</h2>
+            <div className="text-lg ml-4 mt-4">
+              {Object.entries(stacks).map((el, id) => {
                 return (
                   <>
-                    <div className="flex flex-row" key={id}>
-                      <div className="w-30">{`${el[0]} :`}</div>
-                      <div>
-                        {el[1].map((el ,id) => (
-                          <div key={id}>{el}</div>
+                    <div
+                      className="flex flex-row justify-between w-80"
+                      key={id}
+                    >
+                      <div className="">{`[ ${el[0]} ]`}</div>
+                      <div className="flex flex-row">
+                        {el[1].map((el, id) => (
+                          <div className="pl-2" key={id}>
+                            {" "}
+                            {`${el}`}{" "}
+                          </div>
                         ))}
                       </div>
                     </div>
@@ -68,9 +82,9 @@ const ReadMeDetail = (props: ProjectDetail) => {
             </div>
           </div>
 
-          <div className="h-40 w-96">
+          {/* <div className="h-40 w-96">
             <Image src={props.image} alt="123123" />
-          </div>
+          </div> */}
         </div>
       </section>
     </>
