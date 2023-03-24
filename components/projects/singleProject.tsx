@@ -21,7 +21,7 @@ const SingleProject: FunctionComponent<Project> = (props) => {
         <div className="text-3xl font-black mb-5">{title}</div>
         <div>{duetime}</div>
       </div>
-      <div className="flex flex-col lg:flex-row">
+      <div className="flex flex-col lg:flex-row pl-5 pr-2">
         <div className="basis-2/4">{useCarousel(img)}</div>
         <div className="basis-2/4">
           <div>

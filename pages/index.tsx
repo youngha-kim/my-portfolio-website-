@@ -1,5 +1,5 @@
 import About_me from "@/components/about_me/about_me";
-import Archiving from "@/components/archiving/Archiving";
+import Archiving from "../components/archiving/archiving";
 import Projects from "../components/projects/projects";
 import Skills from "@/components/skills/skills";
 import Intro from "@/components/intro";
@@ -7,20 +7,19 @@ import { ReactNode } from "react";
 import useMoveScroll from "@/components/navBar/hooks/useMoveScroll";
 import { NavCategories } from "../components/shared/constant";
 import useChangeNavstyle from "@/components/navBar/hooks/useChangeNavstyle";
+import { RefObject } from "react";
 
 type props = {
   children: ReactNode;
 };
 
 function MainNavigation(props: props) {
-  const { hoverColor} = useChangeNavstyle();
+  const { hoverColor } = useChangeNavstyle();
   const { element, moveToScroll } = useMoveScroll();
-
-  const navDesign = `sticky top-0 flex justify-around mb-2`
 
   return (
     <main className="py-6 z-40 bg-gradient-to-r from-violet-500 to-fuchsia-500 ">
-      <nav id="navBar" className={navDesign}>
+      <nav id="navBar" className="sticky top-0 flex justify-around mb-2">
         <div
           id="title"
           className="font-mono w-80 rounded px-4 py-2 text-2xl text-[#e0dee8]"

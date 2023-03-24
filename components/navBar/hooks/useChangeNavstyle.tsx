@@ -4,32 +4,33 @@ const useChangePosition = () => {
   const [hoverColor, setHoverColor] = useState(
     "w-auto px-4 py-2 text-xl hover:text-white bg-opacity-100 "
   );
-  const defaultStyle = "w-auto px-4 py-2 text-xl ";
+  const defaultStyle = "w-auto px-4 py-2 text-xl";
   const SCROLL_MIN = 26;
-  let curLocatePercent = 0;
+ 
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = document.documentElement.scrollTop;
-      const navElement = document.getElementById("navBar");
-      const titleElement = document.getElementById("title");
       const maxHeight = document.documentElement.scrollHeight;
-      const navUnderLine = document.getElementById("navBar");
-      curLocatePercent = (scrollTop / maxHeight) * 100 + 14;
-      curLocatePercent = Math.floor(curLocatePercent);
-
+      const curLocatePercent = Math.floor((scrollTop / maxHeight) * 100 + 14)
       
-      console.log(curLocatePercent);
+      const navElement = document.getElementById("navBar");
+      const navStyle = navElement!.style
+
+      const titleElement = document.getElementById("title");
+      const titleStyle = titleElement!.style
+
 
       if (scrollTop > SCROLL_MIN) {
-        navElement!.style.backgroundColor = "white";
-        navUnderLine!.style.background = `linear-gradient(90deg, #1ec4da ${curLocatePercent}%, white 0%)`;
-        titleElement!.style.color = "black";
+        navStyle.backgroundColor = "white";
+        navStyle.background = `linear-gradient(90deg, #82deea ${curLocatePercent}%, white 0%)`;
+        navStyle.background = `animate-spin-slow`
+        titleStyle.color = "black";
         setHoverColor(defaultStyle + "hover:text-red-400");
       } else {
-        navElement!.style.backgroundColor = "";
-        navUnderLine!.style.background="";
-        titleElement!.style.color = "";
+        navStyle.backgroundColor = "";
+        navStyle.background="";
+        titleStyle.color = "";
         setHoverColor(defaultStyle + "hover:text-white");
       }
     };
@@ -38,7 +39,7 @@ const useChangePosition = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   });
-  return { hoverColor, curLocatePercent };
+  return { hoverColor };
 };
 
 export default useChangePosition;

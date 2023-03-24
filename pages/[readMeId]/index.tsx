@@ -1,27 +1,64 @@
-import { GetStaticProps } from "next";
+import { GetStaticProps, GetStaticPaths, GetStaticPropsContext } from "next";
 import ReadMeDetail from "@/components/projects/readMeDeatail";
-type Mock = {
-  image: string;
-  title: string;
-  id: string;
-  content: string;
-  description: string;
+import { StaticImageData } from "next/image";
+import notion from "../../public/notion.png";
+
+interface OutLine {
+  mainFunction: string[];
+  description: string[];
+}
+interface Stacks {
+  [key: string]: string[];
+}
+
+export interface ProjectDetail {
+  outline: OutLine;
+  stacks: Stacks;
+  background: string[];
+  meaning: string[];
+  URL: string;
+  image: StaticImageData;
+  title?: string;
+}
+
+export const getStaticProps: GetStaticProps = (
+  context: GetStaticPropsContext
+) => {
+  const readMeId = context.params?.readMeId;
+
+  const mockData: ProjectDetail = {
+    outline: {
+      mainFunction: [
+        "blur blur blur lbrer blureblur",
+        "blur blur blur lbrer blureblur blur blur lbrer blure",
+        "blur blur blur lbrer blureblur blur blur lbrer blure",
+      ],
+      description: [
+        "blur blur blur lbrer blure blur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blure",
+        "2 , asdfasdfas blur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blure",
+        "asdfasdfasdfsfadblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blure",
+      ],
+    },
+    background: [
+      "blur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blure",
+      "blur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blure",
+      "blur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blure",
+    ],
+    meaning: ["blur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blure", "blur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blure", "blur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blure"],
+    stacks: {
+      frontend: ["react", "reactquery", "ty"],
+      database: ["123"],
+    },
+    URL: "www,blur blur blur lbrer blure.com",
+    image: notion,
+  };
+
+  return {
+    props: { ...mockData, title: readMeId },
+  };
 };
 
-const ReadMePage = (props: any) => {
-  return (
-    <>
-      <ReadMeDetail
-        img={props.mockData.image}
-        title={props.mockData.title}
-        content={props.mockData.content}
-        description={props.mockData.description}
-      />
-    </>
-  );
-};
-
-export function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   return {
     fallback: false,
     paths: [
@@ -33,23 +70,22 @@ export function getStaticPaths() {
       },
     ],
   };
-}
+};
 
-export const getStaticProps = (context: any) => {
-  const readMeId = context.params.readMeId;
-  console.log(readMeId);
-  return {
-    props: {
-      mockData: {
-        title: readMeId,
-        image:
-          "https://imagesunsplash.com/photo-1677980102989-96e7c29731f3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60",
-        content: "123123",
-        description:
-          "lemsdupsd sdfasdfasd fasdfasdfasdf asdfasdfasdfa sdfasdfasdfasdfasd fasdfsadfasdf",
-      },
-    },
-  };
+const ReadMePage = (props: ProjectDetail) => {
+  return (
+    <>
+      <ReadMeDetail
+        image={props?.image}
+        title={props?.title}
+        background={props?.background}
+        outline={props?.outline}
+        meaning={props?.meaning}
+        stacks={props?.stacks}
+        URL={props?.URL}
+      />
+    </>
+  );
 };
 
 export default ReadMePage;

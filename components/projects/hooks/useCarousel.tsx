@@ -15,7 +15,7 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 const useCarousel = (imgs: StaticImageData[]) => {
   return (
     <>
-      <div className="position w-full lg:w-96 z-0">
+      <div className="relative w-full lg:w-96 -z-100">
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
