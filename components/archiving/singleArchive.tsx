@@ -3,7 +3,7 @@ import { FunctionComponent } from "react";
 import Image from "next/image";
 import Link from "next/link";
 interface Archieve {
-  img: StaticImageData;
+  img: StaticImageData | string;
   link: string;
   subtitle: string;
   content: string[];
@@ -13,11 +13,10 @@ const SingleArchieve: FunctionComponent<Archieve> = (props) => {
   return (
     <>
       <div className="text-white w-80 h-30 border-b-2">
-        {<Image src={img} alt="123123" />}
+        {<Image src={img} alt="image" />}
       </div>
       <Link href={link} passHref target="_blank">
         <div className="text-blue-500 font-black mt-4  hover:text-pink-400 duration-200">
-          {" "}
           {`-` + " Move To Traveling " + "-"}
         </div>
       </Link>

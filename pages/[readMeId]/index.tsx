@@ -73,7 +73,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-const ReadMePage = (props: ProjectDetail) => {
+const ReadMePage = (props: ProjectDetail ) => {
   return (
     <>
       <ReadMeDetail

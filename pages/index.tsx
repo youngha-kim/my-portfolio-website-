@@ -7,15 +7,17 @@ import { ReactNode } from "react";
 import useMoveScroll from "@/components/navBar/hooks/useMoveScroll";
 import { NavCategories } from "../components/shared/constant";
 import useChangeNavstyle from "@/components/navBar/hooks/useChangeNavstyle";
-import { RefObject } from "react";
+import { MongoClient } from "mongodb";
+
 
 type props = {
   children: ReactNode;
 };
 
-function MainNavigation(props: props) {
+function MainNavigation(props: any) {
   const { hoverColor } = useChangeNavstyle();
   const { element, moveToScroll } = useMoveScroll();
+  const { aboutme, archiving } = props
 
   return (
     <main className="py-6 z-40 bg-gradient-to-r from-violet-500 to-fuchsia-500 ">
@@ -41,7 +43,7 @@ function MainNavigation(props: props) {
         </div>
       </nav>
       <div>
-        <Home element={element}>{props.children}</Home>
+        <Home element={element} aboutMe = {aboutme} archiving = {archiving}>{props.children}</Home>
       </div>
     </main>
   );
@@ -50,22 +52,58 @@ function MainNavigation(props: props) {
 
 function Home(props: any) {
   const { element } = props;
+  const {aboutMe, archiving } = props;
   return (
     <div className="flex-col mb-2">
       <Intro />
       <div ref={element[0]}>
-        <About_me />
+        <About_me aboutMe = {aboutMe}/>
       </div>
       <div ref={element[1]}>
         <Skills />
       </div>
       <div ref={element[2]}>
-        <Archiving />
+        <Archiving archiving = {archiving}/>
       </div>
       <div ref={element[3]}>
         <Projects />
       </div>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  // fetch data from an API
+  const client = await MongoClient.connect(
+    `mongodb+srv://youngha-kim:dkstmq25@my-portfolio.yerzt7i.mongodb.net/portfolio?retryWrites=true&w=majority`
+  );
+  const db = client.db();
+  const initialColllection = db.collection("initialDatas");
+  const aboutMeData = await initialColllection.find({}).toArray();
+  const serialAboutme = aboutMeData?.map((element) => ({
+    id: element._id.toString(),
+    title: element.title,
+    img: element.img,
+    content: element.content,
+  }))
+
+  const archivingColllection = db.collection("archiving");
+  const archivingData = await archivingColllection.find({}).toArray();
+  const serialArchiving = archivingData?.map((element) => ({
+    id: element._id.toString(),
+    subtitle : element.subtitle,
+    image: element.image,
+    content: element.content,
+    link: element.link
+  }))
+
+  client.close();
+
+  return {
+    props: {
+      aboutme: serialAboutme,
+      archiving : serialArchiving
+    },
+  };
 }
 export default MainNavigation;

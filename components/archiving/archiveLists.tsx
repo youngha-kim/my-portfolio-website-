@@ -1,30 +1,33 @@
 import SingleArchieve from "./singleArchive";
 import notion from "../../public/notion.png";
 import github from "../../public/github.png";
-
 import { StaticImageData } from "next/image";
+import { useRef } from "react";
+import { MutableRefObject } from "react";
 
 interface Archieve {
-  img: StaticImageData;
+  id?: string,
+  image: StaticImageData | string;
   link: string;
   subtitle: string;
   content: string[];
 }
+
 interface ArchieveArray extends Array<Archieve> {}
 
 const archieveArr: ArchieveArray = [
   {
-    img: notion,
+    image: notion,
     link: "https://young-ha.notion.site/My-Front-end-Studies-20c65dacb6784af8ad4fec67ec45bb07",
     subtitle: "노션 개인 블로그",
     content: [
       "언어, 프레임워크, 라이브러리 등 공부 기록",
       "과제, 프로젝트 중 만난 에러 기록",
-      "Complete, Writing 등의 상태로, 지식 부채 관리"
+      "Complete, Writing 등의 상태로, 지식 부채 관리",
     ],
   },
   {
-    img: github,
+    image: github,
     link: "https://github.com/youngha-kim",
     subtitle: "깃허브 코드 저장소",
     content: [
@@ -35,11 +38,13 @@ const archieveArr: ArchieveArray = [
   },
 ];
 
-const ArchiveList = () => {
+const ArchiveList = (props : any) => {
+  const {archiving } = props
+
   return (
     <>
       <div className="flex flex-col items-center m-auto max-w-4xl mt-8 md:flex-row md:justify-around">
-        {archieveArr.map((element, id) => {
+        {/* {archieveArr.map((element, id) => {
           return (
             <>
               <div
@@ -48,6 +53,24 @@ const ArchiveList = () => {
               >
                 <SingleArchieve
                   img={element.img}
+                  link={element.link}
+                  subtitle={element.subtitle}
+                  content={element.content}
+                />
+              </div>
+            </>
+          );
+        })} */}
+        {archiving?.map((element : Archieve) => {
+          return (
+            <>
+              <div
+                key={element.id}
+                className="border-2 bg-white m-10 p-6 max-h-fit max-w-fit rounded-2xl shadow-2xl "
+              >
+               
+                <SingleArchieve
+                  img={ element.image === "notion" ? notion : github }
                   link={element.link}
                   subtitle={element.subtitle}
                   content={element.content}

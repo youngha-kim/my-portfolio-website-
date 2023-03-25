@@ -37,14 +37,15 @@ const personal_Info: Personal[] = [
   },
 ];
 
-const About_me = () => {
+const About_me = ( props : any) => {
+  const aboutMe = props.aboutMe;
   return (
     <article className="bg-white pt-20 pb-10 m-auto max-w-10xl">
       <div className="mb-20">
         <Subtitle title={"About me"} txtColor={"text-black"} />
       </div>
       <ul className="flex row flex-wrap justify-around m-auto max-w-3xl">
-        {personal_Info?.map((element) => {
+        {aboutMe?.map((element : any) => {
           return (
             <li key={element.id} className="w-80 h-40 sm:items-center">
               <MyInfo
