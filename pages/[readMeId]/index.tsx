@@ -1,7 +1,8 @@
 import { GetStaticProps, GetStaticPaths, GetStaticPropsContext } from "next";
 import ReadMeDetail from "@/components/projects/readMeDeatail";
 import { StaticImageData } from "next/image";
-import notion from "../../public/notion.png";
+import { MongoClient} from "mongodb";
+import Serial from "@/components/shared/Serial";
 
 interface OutLine {
   mainFunction: string[];
@@ -18,44 +19,24 @@ export interface ProjectDetail {
   meaning: string[];
   deployment: string;
   image: StaticImageData;
-  title?: string;
-  [key: string]: any
+  title: string | undefined | string[];
+  [key: string]: any;
 }
-
-export const getStaticProps: GetStaticProps = (
+export const getStaticProps: GetStaticProps = async (
   context: GetStaticPropsContext
 ) => {
   const readMeId = context.params?.readMeId;
 
-  const mockData: ProjectDetail = {
-    outline: {
-      mainFunction: [
-        "blur blur blur lbrer blureblur",
-        "blur blur blur lbrer blureblur blur blur lbrer blure",
-        "blur blur blur lbrer blureblur blur blur lbrer blure",
-      ],
-      description: [
-        "blur blur blur lbrer blure blur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blure",
-        "2 , asdfasdfas blur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blure",
-        "asdfasdfasdfsfadblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blure",
-      ],
-    },
-    background: [
-      "blur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blure",
-      "blur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blure",
-      "blur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blure",
-    ],
-    meaning: ["blur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blure", "blur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blure", "blur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blureblur blur blur lbrer blure"],
-    stacks: {
-      frontend: ["react", "reactquery", "ty"],
-      database: ["123"],
-    },
-    deployment: "www.woodongs.site",
-    image: notion,
-  };
+  const client = await MongoClient.connect(
+    `mongodb+srv://youngha-kim:dkstmq25@my-portfolio.yerzt7i.mongodb.net/portfolio?retryWrites=true&w=majority`
+  );
+  const db = client.db();
+  const readMeCollection = db.collection("readMe");
+  const readMeData = await readMeCollection.find({ title: readMeId }).toArray();
+  const  SerialedData  =  Serial(readMeData[0]);
 
   return {
-    props: { ...mockData, title: readMeId },
+    props: SerialedData ,
   };
 };
 
@@ -73,7 +54,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-const ReadMePage = (props: ProjectDetail ) => {
+const ReadMePage = (props: ProjectDetail) => {
   return (
     <>
       <ReadMeDetail
