@@ -8,6 +8,7 @@ import useMoveScroll from "@/components/navBar/hooks/useMoveScroll";
 import { NavCategories } from "../components/shared/constant";
 import useChangeNavstyle from "@/components/navBar/hooks/useChangeNavstyle";
 import { MongoClient } from "mongodb";
+import Head from "next/head";
 
 
 type props = {
@@ -20,6 +21,11 @@ function MainNavigation(props: any) {
   const { aboutme, archiving } = props
 
   return (
+    <>
+    <Head>
+      <title>youngha's portfolio</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </Head>
     <main className="py-6 z-40 bg-gradient-to-r from-violet-500 to-fuchsia-500 ">
       <nav id="navBar" className="sticky top-0 flex justify-around mb-2">
         <div
@@ -46,6 +52,7 @@ function MainNavigation(props: any) {
         <Home element={element} aboutMe = {aboutme} archiving = {archiving}>{props.children}</Home>
       </div>
     </main>
+    </>
   );
 }
 
