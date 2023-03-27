@@ -47,7 +47,7 @@ const Archiving = (props: any) => {
       <div>
         <ArchiveList archiving={archiving} />
       </div>
-      <form onSubmit={submitHandler} className="bg-white">
+      {/* <form onSubmit={submitHandler} className="bg-white">
         <div>
           <label htmlFor="image">Image</label>
           <input required type="text" ref={imageInputRef} />
@@ -66,7 +66,7 @@ const Archiving = (props: any) => {
         <div>
           <button>확인</button>
         </div>
-      </form>
+      </form> */}
     </article>
   );
 };

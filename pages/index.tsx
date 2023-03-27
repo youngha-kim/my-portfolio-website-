@@ -92,6 +92,7 @@ export async function getStaticProps() {
     title: element.title,
     img: element.img,
     content: element.content,
+    opt: element?.opt || null
   }))
 
   const archivingColllection = db.collection("archiving");
