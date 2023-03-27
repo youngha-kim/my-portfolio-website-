@@ -23,7 +23,7 @@ function MainNavigation(props: any) {
   return (
     <>
     <Head>
-      <title>youngha's portfolio</title>
+      <title>youngha&apos; portfolio</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </Head>
     <main className="py-6 z-40 bg-gradient-to-r from-violet-500 to-fuchsia-500 ">
