@@ -21,7 +21,7 @@ const ReadMeDetail = (props: ProjectDetail) => {
           <div className="mt-14">
             <h2 className="text-2xl font-semibold">🟢 Deployment</h2>
             <button className="text-xl ml-4 mt-4 text-blue-400" onClick={() => moveToOuter(deployment)}>
-              <Link href={"https://woodongs.site"} passHref>  [{deployment}]</Link>
+              <Link href={deployment} passHref>  [{deployment}]</Link>
             </button>
           </div>
           <div className="mt-14">
