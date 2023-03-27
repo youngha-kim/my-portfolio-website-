@@ -32,7 +32,7 @@ function MainNavigation(props: any) {
           id="title"
           className="font-mono w-80 rounded px-4 py-2 text-2xl text-[#e0dee8]"
         >
-          youngha Portfolio
+          youngha&apos;  Portfolio
         </div>
         <div className="flex items-center ">
           {NavCategories?.map((element, id) => {

@@ -68,7 +68,7 @@ const projectArr: ProjectArray = [
 const ProjectList = () => {
   return (
     <>
-      <div className="m-auto max-w-6xl mt-8 ">
+      <div className="items-center m-auto max-w-6xl mt-8 w-full ">
         {projectArr.map((element, id) => {
           return (
             <>
