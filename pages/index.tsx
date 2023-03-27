@@ -1,7 +1,7 @@
-import About_me from "@/components/about_me/about_me";
-import Archiving from "../components/archiving/archiving";
-import Projects from "../components/projects/projects";
-import Skills from "@/components/skills/skills";
+import About_me from "../components/about_me/About_me";
+import Archiving from "../components/archiving/Archiving";
+import Projects from "../components/projects/Projects";
+import Skills from "../components/skills/Skills";
 import Intro from "@/components/intro";
 import { ReactNode } from "react";
 import useMoveScroll from "@/components/navBar/hooks/useMoveScroll";
