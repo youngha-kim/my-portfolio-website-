@@ -1,13 +1,19 @@
-import { RefObject, useRef } from "react";
+import { RefObject, useRef, useState } from "react";
 import { NavCategories } from "../../shared/constant";
 import { MouseEvent } from "react";
+import { SetStateAction, Dispatch } from "react";
 
 interface ObjectType {
   [key: string | number]: RefObject<HTMLDivElement>;
 }
-
+interface toggleState {
+  isOpen: Boolean;
+  setIsOpen: Dispatch<SetStateAction<Boolean>>;
+}
 //hook
 const useMoveScroll = () => {
+  const [isOpen, setIsOpen] = useState<toggleState["isOpen"]>(false);
+
   const element: ObjectType = {
     0: useRef<HTMLDivElement>(null),
     1: useRef<HTMLDivElement>(null),
@@ -23,10 +29,12 @@ const useMoveScroll = () => {
           behavior: "smooth",
           block: "start",
         });
+
+        setIsOpen(false)
       }
     }
   };
-  return { element, moveToScroll };
+  return { element, moveToScroll, isOpen, setIsOpen };
 };
 
 export default useMoveScroll;

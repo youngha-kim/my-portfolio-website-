@@ -10,22 +10,18 @@ import useChangeNavstyle from "@/components/navBar/hooks/useChangeNavstyle";
 import { MongoClient } from "mongodb";
 import Head from "next/head";
 import Hamburger from "../components/navBar/hooks/makeHamburger";
-import { useState } from "react";
-import { SetStateAction, Dispatch } from "react";
+
 
 type props = {
   children: ReactNode;
 };
 
-interface toggleState {
-  isOpen: Boolean;
-  setIsOpen: Dispatch<SetStateAction<Boolean>>;
-}
+
 
 function MainNavigation(props: any) {
-  const [isOpen, setIsOpen] = useState<toggleState["isOpen"]>(false);
+
   const { hoverColor } = useChangeNavstyle();
-  const { element, moveToScroll } = useMoveScroll();
+  const { element, moveToScroll, isOpen, setIsOpen } = useMoveScroll();
   const { aboutme, archiving } = props;
 
   return (
@@ -54,7 +50,7 @@ function MainNavigation(props: any) {
                     <button
                       key={id}
                       className={hoverColor}
-                      onClick={(event) => moveToScroll(event)}
+                      onClick={moveToScroll}
                     >
                       {element}
                     </button>
@@ -70,7 +66,7 @@ function MainNavigation(props: any) {
 
         {isOpen ? (
           <>
-            <div className="sticky bg-white-200 opacity-75 w-full transition duration-200 ease-out sm:ease-in flex flex-col block sm:hidden top-12 ">
+            <div className="sticky bg-white opacity-90 w-full transition duration-200 ease-out sm:ease-in flex flex-col block sm:hidden top-12 ">
               {NavCategories?.map((element, id) => {
                 return (
                   <>
