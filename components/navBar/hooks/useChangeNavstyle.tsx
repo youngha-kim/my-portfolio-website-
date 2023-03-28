@@ -4,32 +4,30 @@ const useChangePosition = () => {
   const [hoverColor, setHoverColor] = useState(
     "w-auto px-4 py-2 text-xl hover:text-white bg-opacity-100 "
   );
-  const defaultStyle = "w-auto px-4 py-2 text-xl";
+  const defaultStyle = "w-auto px-4 py-2 text-xl ";
   const SCROLL_MIN = 26;
- 
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = document.documentElement.scrollTop;
       const maxHeight = document.documentElement.scrollHeight;
-      const curLocatePercent = Math.floor((scrollTop / maxHeight) * 100 + 14)
-      
+      const curLocatePercent = Math.floor((scrollTop / maxHeight) * 100 + 14);
+
       const navElement = document.getElementById("navBar");
-      const navStyle = navElement!.style
+      const navStyle = navElement!.style;
 
       const titleElement = document.getElementById("title");
-      const titleStyle = titleElement!.style
-
+      const titleStyle = titleElement!.style;
 
       if (scrollTop > SCROLL_MIN) {
         navStyle.backgroundColor = "white";
         navStyle.background = `linear-gradient(90deg, #82deea ${curLocatePercent}%, white 0%)`;
-        navStyle.background = `animate-spin-slow`
+        navStyle.background = `animate-spin-slow`;
         titleStyle.color = "black";
         setHoverColor(defaultStyle + "hover:text-red-400");
       } else {
         navStyle.backgroundColor = "";
-        navStyle.background="";
+        navStyle.background = "";
         titleStyle.color = "";
         setHoverColor(defaultStyle + "hover:text-white");
       }

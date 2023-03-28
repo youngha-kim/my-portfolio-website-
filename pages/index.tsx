@@ -9,68 +9,104 @@ import { NavCategories } from "../components/shared/constant";
 import useChangeNavstyle from "@/components/navBar/hooks/useChangeNavstyle";
 import { MongoClient } from "mongodb";
 import Head from "next/head";
-
+import Hamburger from "../components/navBar/hooks/makeHamburger";
+import { useState } from "react";
+import { SetStateAction, Dispatch } from "react";
 
 type props = {
   children: ReactNode;
 };
 
+interface toggleState {
+  isOpen: Boolean;
+  setIsOpen: Dispatch<SetStateAction<Boolean>>;
+}
+
 function MainNavigation(props: any) {
+  const [isOpen, setIsOpen] = useState<toggleState["isOpen"]>(false);
   const { hoverColor } = useChangeNavstyle();
   const { element, moveToScroll } = useMoveScroll();
-  const { aboutme, archiving } = props
+  const { aboutme, archiving } = props;
 
   return (
     <>
-    <Head>
-      <title>youngha&apos; portfolio</title>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    </Head>
-    <main className="py-6 z-40 bg-gradient-to-r from-violet-500 to-fuchsia-500 ">
-      <nav id="navBar" className="sticky top-0 flex justify-around mb-2">
-        <div
-          id="title"
-          className="font-mono w-80 rounded px-4 py-2 text-2xl text-[#e0dee8]"
-        >
-          youngha&apos;  Portfolio
+      <Head>
+        <title>youngha&apos; portfolio</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </Head>
+      <main className="py-6 z-40 bg-gradient-to-r from-violet-500 to-fuchsia-500 ">
+        <nav id="navBar" className="sticky top-0 flex justify-around mb-2">
+          <div
+            id="title"
+            className="font-mono w-80 rounded px-4 py-2 text-2xl text-[#e0dee8]"
+          >
+            youngha&apos; Portfolio
+          </div>
+
+          <div id="lest" className="flex items-center ">
+            <div className="hidden md:block ">
+            {NavCategories?.map((element, id) => {
+              return (
+                <>
+                    <button
+                      key={id}
+                      className={hoverColor}
+                      onClick={(event) => moveToScroll(event)}
+                    >
+                      {element}
+                    </button>
+                </>
+              );
+            })}
+            </div>
+            <div id="hamburger">
+              <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
+            </div>
+          </div>
+        </nav>
+        <div className="flex flex-col bg-white block md:hidden sticky top-12 ">
+          {isOpen ? (
+            <>
+              {NavCategories?.map((element, id) => {
+                return (
+                  <>
+                    <button
+                      key={id}
+                      className={hoverColor}
+                      onClick={(event) => moveToScroll(event)}
+                    >
+                      {element}
+                    </button>
+                  </>
+                );
+              })}
+            </>
+          ) : null}
         </div>
-        <div className="flex items-center ">
-          {NavCategories?.map((element, id) => {
-            return (
-              <button
-                key={id}
-                className={hoverColor}
-                onClick={(event) => moveToScroll(event)}
-              >
-                {element}
-              </button>
-            );
-          })}
-        </div>
-      </nav>
-      <div>
-        <Home element={element} aboutMe = {aboutme} archiving = {archiving}>{props.children}</Home>
-      </div>
-    </main>
+        
+          <Home element={element} aboutMe={aboutme} archiving={archiving}>
+            {props.children}
+          </Home>
+        
+      </main>
     </>
   );
 }
 
-
 function Home(props: any) {
   const { element } = props;
-  const {aboutMe, archiving } = props;
+  const { aboutMe, archiving } = props;
   return (
     <div className="flex-col mb-2">
       <Intro />
       <div ref={element[0]}>
-        <About_me aboutMe = {aboutMe}/>
+        <About_me aboutMe={aboutMe} />
       </div>
       <div ref={element[1]}>
         <Skills />
       </div>
       <div ref={element[2]}>
-        <Archiving archiving = {archiving}/>
+        <Archiving archiving={archiving} />
       </div>
       <div ref={element[3]}>
         <Projects />
@@ -92,25 +128,25 @@ export async function getStaticProps() {
     title: element.title,
     img: element.img,
     content: element.content,
-    opt: element?.opt || null
-  }))
+    opt: element?.opt || null,
+  }));
 
   const archivingColllection = db.collection("archiving");
   const archivingData = await archivingColllection.find({}).toArray();
   const serialArchiving = archivingData?.map((element) => ({
     id: element._id.toString(),
-    subtitle : element.subtitle,
+    subtitle: element.subtitle,
     image: element.image,
     content: element.content,
-    link: element.link
-  }))
+    link: element.link,
+  }));
 
   client.close();
 
   return {
     props: {
       aboutme: serialAboutme,
-      archiving : serialArchiving
+      archiving: serialArchiving,
     },
   };
 }
