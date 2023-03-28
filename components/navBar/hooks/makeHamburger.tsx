@@ -17,7 +17,7 @@ const HamburgerMenu: FunctionComponent<toggleState> = (props : toggleState) => {
   };
 
   return (
-    <div className="flex items-center justify-between px-4 py-3 block md:hidden">
+    <div className="flex items-center justify-between px-4 py-3 block sm:hidden">
       <div>
         {isOpen ? (
           <HiX className="text-2xl text-gray-800 cursor-pointer " onClick={handleToggle} />

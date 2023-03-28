@@ -32,7 +32,10 @@ function MainNavigation(props: any) {
     <>
       <Head>
         <title>youngha&apos; portfolio</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0 maximum-scale=1 minimum-scale=1"
+        />
       </Head>
       <main className="py-6 z-40 bg-gradient-to-r from-violet-500 to-fuchsia-500 ">
         <nav id="navBar" className="sticky top-0 flex justify-around mb-2">
@@ -43,30 +46,8 @@ function MainNavigation(props: any) {
             youngha&apos; Portfolio
           </div>
 
-          <div id="lest" className="flex items-center ">
-            <div className="hidden md:block ">
-            {NavCategories?.map((element, id) => {
-              return (
-                <>
-                    <button
-                      key={id}
-                      className={hoverColor}
-                      onClick={(event) => moveToScroll(event)}
-                    >
-                      {element}
-                    </button>
-                </>
-              );
-            })}
-            </div>
-            <div id="hamburger">
-              <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
-            </div>
-          </div>
-        </nav>
-        <div className="flex flex-col bg-white block md:hidden sticky top-12 ">
-          {isOpen ? (
-            <>
+          <div className="flex items-center ">
+            <div className="hidden sm:block">
               {NavCategories?.map((element, id) => {
                 return (
                   <>
@@ -80,14 +61,36 @@ function MainNavigation(props: any) {
                   </>
                 );
               })}
-            </>
-          ) : null}
-        </div>
-        
-          <Home element={element} aboutMe={aboutme} archiving={archiving}>
-            {props.children}
-          </Home>
-        
+            </div>
+            <div id="hamburger">
+              <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
+            </div>
+          </div>
+        </nav>
+
+        {isOpen ? (
+          <>
+            <div className="sticky bg-white-200 opacity-75 w-full transition duration-200 ease-out sm:ease-in flex flex-col block sm:hidden top-12 ">
+              {NavCategories?.map((element, id) => {
+                return (
+                  <>
+                    <button
+                      key={id}
+                      className={hoverColor}
+                      onClick={(event) => moveToScroll(event)}
+                    >
+                      {element}
+                    </button>
+                  </>
+                );
+              })}
+            </div>
+          </>
+        ) : null}
+
+        <Home element={element} aboutMe={aboutme} archiving={archiving}>
+          {props.children}
+        </Home>
       </main>
     </>
   );
