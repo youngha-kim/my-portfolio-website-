@@ -36,7 +36,7 @@ const useCarousel = (imgs: StaticImageData[]) => {
         >
           {imgs.map((element, id) => {
             return (
-              <SwiperSlide key={id} className="border-2 -z-100">
+              <SwiperSlide key={id} className="border-2 border-black -z-100">
                 <div className="relative object-fill w-fit h-80 z-0">
                   <Image key={id} src={element} alt="image" />
                 </div>

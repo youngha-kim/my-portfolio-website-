@@ -23,7 +23,7 @@ const SingleProject: FunctionComponent<Project> = (props) => {
         <div>{duetime}</div>
       </div>
       <div className="flex flex-col lg:flex-row pl-5 pr-2">
-        <div className="basis-2/4">{useCarousel(img)}</div>
+        <div className="basis-2/4 mb-10">{useCarousel(img)}</div>
         <div className="basis-2/4">
           <div>
             {mainContent.map((element, id) => (
