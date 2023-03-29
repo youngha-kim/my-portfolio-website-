@@ -4,6 +4,7 @@ import Layout from '@/components/layout/Layout'
 // import MainNavigation from '@/components/navBar/MainNavigation'
 
 export default function App({ Component, pageProps }: AppProps) {
+  
   return(
     <>
     <Layout>

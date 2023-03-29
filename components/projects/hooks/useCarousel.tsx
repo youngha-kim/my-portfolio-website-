@@ -13,14 +13,18 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper";
 
 const useCarousel = (imgs: StaticImageData[]) => {
+  // const swiper = document.getElementById("swiper")
+  // swiper.style.zIndex = 0
+  // console.log(swiper)
+
   return (
     <>
-      <div className="relative w-full lg:w-96 -z-100">
+      <div id="swiper" className="relative w-full lg:w-96 z-0">
         <Swiper
           spaceBetween={30}
-          centeredSlides={true}
+          centeredSlides={false}
           autoplay={{
-            delay: 3500,
+            delay: 4000,
             disableOnInteraction: false,
           }}
           pagination={{
@@ -32,7 +36,7 @@ const useCarousel = (imgs: StaticImageData[]) => {
         >
           {imgs.map((element, id) => {
             return (
-              <SwiperSlide key={id}>
+              <SwiperSlide key={id} className="border-2 -z-100">
                 <div className="relative object-fill w-fit h-80 z-0">
                   <Image key={id} src={element} alt="image" />
                 </div>

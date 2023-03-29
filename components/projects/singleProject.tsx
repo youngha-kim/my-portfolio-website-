@@ -12,6 +12,7 @@ interface Project {
   mainContent: string[];
   subContent: sub[];
 }
+
 const SingleProject: FunctionComponent<Project> = (props) => {
   const { title, duetime, img, mainContent, subContent } = props;
 

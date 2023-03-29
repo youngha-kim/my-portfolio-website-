@@ -3,6 +3,7 @@ import ReadMeDetail from "@/components/projects/readMeDeatail";
 import { StaticImageData } from "next/image";
 import { MongoClient} from "mongodb";
 import Serial from "@/components/shared/serialData";
+import ConnectDb from "@/components/shared/hooks/ConnectDb";
 
 interface OutLine {
   mainFunction: string[];
@@ -26,17 +27,11 @@ export const getStaticProps: GetStaticProps = async (
   context: GetStaticPropsContext
 ) => {
   const readMeId = context.params?.readMeId;
-
-  const client = await MongoClient.connect(
-    `mongodb+srv://youngha-kim:dkstmq25@my-portfolio.yerzt7i.mongodb.net/portfolio?retryWrites=true&w=majority`
-  );
-  const db = client.db();
-  const readMeCollection = db.collection("readMe");
-  const readMeData = await readMeCollection.find({ title: readMeId }).toArray();
-  const  SerialedData  =  Serial(readMeData[0]);
+  const data = await ConnectDb("readMe","get", readMeId )
+  const  SerialedReadMe  =  Serial(data[0]);
 
   return {
-    props: SerialedData ,
+    props: SerialedReadMe ,
   };
 };
 

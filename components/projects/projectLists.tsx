@@ -1,6 +1,9 @@
 import SingleProject from "./singleProject";
 import notion from "../../public/notion.png";
-import github from "../../public/github.png";
+import archiving from "../../public/archiving.png";
+import intro from "../../public/intro.png"
+import skills from "../../public/skills.png"
+import aboutme from "../../public/aboutme.png"
 
 import { StaticImageData } from "next/image";
 type sub = string[];
@@ -20,14 +23,12 @@ const projectArr: ProjectArray = [
     id: 1,
     title: "포트폴리오 웹사이트",
     duetime: "< 2023.03 개인 프로젝트 >",
-    img: [github, github, github, github],
+    img: [archiving, intro, aboutme, skills],
     mainContent: [
       " 처음으로 진행했던 단독 프로젝트 입니다. 보는 이로 하여금, `어떻게 하면 쉽게 읽힐 수 있을까`에 대한 부분들을 고민하며 개발하였습니다.",
       " 폴더 구조의 세분화, 컴포넌트를 구분하는 기준을 스스로 정의하면서, 세세한 부분들을 생각해보고 적용하며 차분히 개발을 할 수 있었습니다. 특히 하드코딩을 피하는 것과 코드의 길이는 줄이는 것을 우선순위로 삼아, useCustom hook에 익숙해 진 계기가 되었습니다.",
       " next.js, typescript등 처음 접해본 기술들을 직접 학습하며 적용해 나갔다는 점이 저에게로 하여금 새로운 기술에 대한 두려움이 설렘으로 바뀌게 된 계기가 되었습니다.",
-      ` 평소 미뤄왔던 CSS에 대한 부분들을 ${(
-        <h2>tailwind css</h2>
-      )}로 구현하여 자신감을 크게 얻어낼 수 있었습니다.`,
+      ` 평소 미뤄왔던 CSS에 대한 부분들을 tailwind CSS로 구현하여 자신감을 크게 얻어낼 수 있었습니다.`,
       "serverless에 대한 위대함을 직접 겪어 볼 수 있어서 좋았습니다.",
     ],
     subContent: [

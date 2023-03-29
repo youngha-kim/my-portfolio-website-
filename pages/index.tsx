@@ -9,7 +9,8 @@ import { NavCategories } from "../components/shared/constant";
 import useChangeNavstyle from "@/components/navBar/hooks/useChangeNavstyle";
 import Head from "next/head";
 import Hamburger from "../components/navBar/hooks/makeHamburger";
-import useConnectDb from "@/components/shared/hooks/useConnectDb";
+import Serial from "@/components/shared/serialData";
+import connectDb from "@/components/shared/hooks/ConnectDb";
 
 type props = {
   children: ReactNode;
@@ -39,7 +40,7 @@ function MainNavigation(props: any) {
         />
       </Head>
       <main className="py-6 z-40 bg-gradient-to-r from-violet-500 to-fuchsia-500 ">
-        <nav id="navBar" className="sticky top-0 flex justify-around mb-2">
+        <nav id="navBar" className="sticky top-0 flex justify-around mb-2 z-10">
           <div
             id="title"
             className="font-mono w-80 rounded px-4 py-2 text-2xl text-[#e0dee8]"
@@ -71,7 +72,7 @@ function MainNavigation(props: any) {
 
         {isOpen ? (
           <>
-            <div className="sticky bg-white opacity-90 w-full transition duration-200 ease-out sm:ease-in flex flex-col block sm:hidden top-12 ">
+            <div className="sticky bg-white opacity-90 w-full transition duration-200 ease-out sm:ease-in flex flex-col block sm:hidden top-12 z-10">
               {NavCategories?.map((element, id) => {
                 return (
                   <>
@@ -121,8 +122,11 @@ function Home(props: any) {
 
 export async function getStaticProps() {
   // fetch data from an API
-  const  serialAboutMe  = await useConnectDb("initialDatas", "get");
-  const  serialArchiving  = await useConnectDb("archiving", "get");
+  const aboutMeData  = await connectDb("initialDatas", "get");
+  const archivingData  = await connectDb("archiving", "get");
+  const serialAboutMe = convertToArray(Serial(aboutMeData))
+  const serialArchiving = convertToArray(Serial(archivingData))
+console.log(serialArchiving)
 
   return {
     props: {
