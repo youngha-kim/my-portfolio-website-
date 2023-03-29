@@ -13,15 +13,15 @@ const ReadMeDetail = (props: ProjectDetail) => {
   }
   return (
     <>
-    <div className="max-w-screen-xl w-fit">
-      <nav className="bg-black text-white p-5 pl-20 text-xl">READ_ME</nav>
+    <div className="max-w-10xl w-fit">
+      <nav className="bg-black text-white p-5 sm:pl-20 text-xl">READ_ME</nav>
       <section className="bg-white p-10 sm:p-20 pt-10 rounded-2xl shadow-2xl text-basic">
         <h1 className="text-3xl mb-10 font-bold">{title}</h1>
         <hr></hr>
         <div className="mt-5">
           <div className="mt-14">
             <h2 className="text-2xl font-semibold">🟢 Deployment</h2>
-            <button className="text-xl ml-4 mt-4 text-blue-400" onClick={() => moveToOuter(deployment)}>
+            <button className="text-xl sm:ml-4 mt-4 text-blue-400" onClick={() => moveToOuter(deployment)}>
               <Link href={deployment} passHref>  [{deployment}]</Link>
             </button>
           </div>

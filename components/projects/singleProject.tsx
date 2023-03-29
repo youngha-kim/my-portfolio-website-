@@ -46,7 +46,7 @@ const SingleProject: FunctionComponent<Project> = (props) => {
           <div className="mt-4">
             {subContent.map((element, id) => (
               <div key={id} className="flex mb-3 sm:flex-row flex-col">
-                <span className="font-bold basis-1/4 ">[{element[0]}]</span>
+                <span className="font-bold basis-1/4 mb-2">[{element[0]}]</span>
                 <span className="basis-3/4 sm: mb-5">{element[1]}</span>
               </div>
             ))}

@@ -7,19 +7,24 @@ import { ReactNode } from "react";
 import useMoveScroll from "@/components/navBar/hooks/useMoveScroll";
 import { NavCategories } from "../components/shared/constant";
 import useChangeNavstyle from "@/components/navBar/hooks/useChangeNavstyle";
-import { MongoClient } from "mongodb";
 import Head from "next/head";
 import Hamburger from "../components/navBar/hooks/makeHamburger";
-
+import useConnectDb from "@/components/shared/hooks/useConnectDb";
 
 type props = {
   children: ReactNode;
 };
 
+const convertToArray = (input: any) => {
+  let array = [];
+  for (let el in input) {
+    array.push(input[el]);
+  }
+  return array;
+};
 
 
 function MainNavigation(props: any) {
-
   const { hoverColor } = useChangeNavstyle();
   const { element, moveToScroll, isOpen, setIsOpen } = useMoveScroll();
   const { aboutme, archiving } = props;
@@ -116,35 +121,12 @@ function Home(props: any) {
 
 export async function getStaticProps() {
   // fetch data from an API
-  const client = await MongoClient.connect(
-    `mongodb+srv://youngha-kim:dkstmq25@my-portfolio.yerzt7i.mongodb.net/portfolio?retryWrites=true&w=majority`
-  );
-  const db = client.db();
-  const initialColllection = db.collection("initialDatas");
-  const aboutMeData = await initialColllection.find({}).toArray();
-  const serialAboutme = aboutMeData?.map((element) => ({
-    id: element._id.toString(),
-    title: element.title,
-    img: element.img,
-    content: element.content,
-    opt: element?.opt || null,
-  }));
-
-  const archivingColllection = db.collection("archiving");
-  const archivingData = await archivingColllection.find({}).toArray();
-  const serialArchiving = archivingData?.map((element) => ({
-    id: element._id.toString(),
-    subtitle: element.subtitle,
-    image: element.image,
-    content: element.content,
-    link: element.link,
-  }));
-
-  client.close();
+  const  serialAboutMe  = await useConnectDb("initialDatas", "get");
+  const  serialArchiving  = await useConnectDb("archiving", "get");
 
   return {
     props: {
-      aboutme: serialAboutme,
+      aboutme: serialAboutMe,
       archiving: serialArchiving,
     },
   };
