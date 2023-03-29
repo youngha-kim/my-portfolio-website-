@@ -1,7 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { MongoClient } from "mongodb";
 import type { NextApiRequest, NextApiResponse } from "next";
-import ConnectDb from "@/components/shared/hooks/ConnectDb";
+import ConnectDb from "@/components/shared/ConnectDb";
 
 export default async function handler(
   req: NextApiRequest,

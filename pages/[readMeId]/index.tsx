@@ -1,9 +1,8 @@
 import { GetStaticProps, GetStaticPaths, GetStaticPropsContext } from "next";
-import ReadMeDetail from "@/components/projects/readMeDeatail";
+import ReadMeDetail from "@/components/projects/readMeDetail";
 import { StaticImageData } from "next/image";
-import { MongoClient} from "mongodb";
 import Serial from "@/components/shared/serialData";
-import ConnectDb from "@/components/shared/hooks/ConnectDb";
+import ConnectDb from "@/components/shared/ConnectDb";
 
 interface OutLine {
   mainFunction: string[];

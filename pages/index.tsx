@@ -8,9 +8,9 @@ import useMoveScroll from "@/components/navBar/hooks/useMoveScroll";
 import { NavCategories } from "../components/shared/constant";
 import useChangeNavstyle from "@/components/navBar/hooks/useChangeNavstyle";
 import Head from "next/head";
-import Hamburger from "../components/navBar/hooks/makeHamburger";
+import Hamburger from "../components/navBar/makeHamburger";
 import Serial from "@/components/shared/serialData";
-import connectDb from "@/components/shared/hooks/ConnectDb";
+import connectDb from "@/components/shared/ConnectDb";
 
 type props = {
   children: ReactNode;
