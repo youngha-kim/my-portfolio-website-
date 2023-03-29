@@ -3,3 +3,4 @@ declare module '*.png' {
   export default src;
 }
  export const PASSWORD = "dkstmq25"
+

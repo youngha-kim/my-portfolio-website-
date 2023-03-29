@@ -45,9 +45,9 @@ const SingleProject: FunctionComponent<Project> = (props) => {
           <hr></hr>
           <div className="mt-4">
             {subContent.map((element, id) => (
-              <div key={id} className="flex flex-row mb-3 ">
-                <span className="font-bold basis-1/4">[{element[0]}]</span>
-                <span className="basis-3/4">{element[1]}</span>
+              <div key={id} className="flex mb-3 sm:flex-row flex-col">
+                <span className="font-bold basis-1/4 ">[{element[0]}]</span>
+                <span className="basis-3/4 sm: mb-5">{element[1]}</span>
               </div>
             ))}
           </div>
