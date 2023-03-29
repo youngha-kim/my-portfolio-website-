@@ -13,8 +13,9 @@ const ReadMeDetail = (props: ProjectDetail) => {
   }
   return (
     <>
+    <div className="max-w-screen-xl w-fit">
       <nav className="bg-black text-white p-5 pl-20 text-xl">READ_ME</nav>
-      <section className="bg-white p-20 pt-10 max-w-screen-2xl rounded-2xl shadow-2xl text-basic">
+      <section className="bg-white p-10 sm:p-20 pt-10 rounded-2xl shadow-2xl text-basic">
         <h1 className="text-3xl mb-10 font-bold">{title}</h1>
         <hr></hr>
         <div className="mt-5">
@@ -67,8 +68,8 @@ const ReadMeDetail = (props: ProjectDetail) => {
                       className="flex flex-row justify-between w-80"
                       key={id}
                     >
-                      <div className="">{`[ ${el[0]} ]`}</div>
-                      <div className="flex flex-row">
+                      <div className="font-bold basis-1/4 ">{`${el[0]}`}</div>
+                      <div className="basis-3/4 mb-5 ml-10">
                         {el[1].map((el, id) => (
                           <div className="pl-2" key={id}>
                             {" "}
@@ -88,6 +89,7 @@ const ReadMeDetail = (props: ProjectDetail) => {
           </div> */}
         </div>
       </section>
+      </div>
     </>
   );
 };
