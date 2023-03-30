@@ -34,10 +34,10 @@ const projectArr: ProjectArray = [
     img: [archiving, intro, aboutme, skills],
     mainContent: [
       " 처음으로 진행했던 단독 프로젝트 입니다. 보는 이로 하여금, `어떻게 하면 쉽게 읽힐 수 있을까`에 대한 부분들을 고민하며 개발하였습니다.",
-      " 폴더 구조의 세분화, 컴포넌트를 구분하는 기준을 스스로 정의하면서, 세세한 부분들을 생각해보고 적용하며 차분히 개발을 할 수 있었습니다. 특히 하드코딩을 피하는 것과 코드의 길이는 줄이는 것을 우선순위로 삼아, useCustom hook에 익숙해 진 계기가 되었습니다.",
+      " 폴더 구조의 세분화, 컴포넌트를 구분하는 기준을 스스로 정의하면서, 세세한 부분들을 생각해보고 적용하며 차분히 개발을 할 수 있었습니다. 특히 하드코딩을 피하는 것과 코드의 길이는 줄이는 것을 우선순위로 삼은 결과, useCustom hook을 사용하는 것에 익숙해 진 계기가 되었습니다.",
       " next.js, typescript등 처음 접해본 기술들을 직접 학습하며 적용해 나갔다는 점이 저에게로 하여금 새로운 기술에 대한 두려움이 설렘으로 바뀌게 된 계기가 되었습니다.",
-      ` 평소 미뤄왔던 CSS에 대한 부분들을 tailwind CSS로 구현하여 자신감을 크게 얻어낼 수 있었습니다.`,
-      "serverless에 대한 위대함을 직접 겪어 볼 수 있어서 좋았습니다.",
+      " 평소 미뤄왔던 CSS에 대한 부분들을 tailwind CSS로 구현하여 자신감을 크게 얻어낼 수 있었습니다.",
+      " serverless에 대한 위대함을 직접 겪어 볼 수 있어서 좋았습니다.",
     ],
     subContent: [
       [
@@ -46,8 +46,8 @@ const projectArr: ProjectArray = [
       ["Github", "https://github.com/youngha-kim/my-portfolio-website-"],
       ["URL", "https://my-portfolio-website-mu.vercel.app/"],
       ["Frontend", "Next.js, Typescript, Tailwind css "],
-      ["DB", "mongoDB"],
-      ["Deployment", "vercel"],
+      ["DB", "MongoDB Atlas"],
+      ["Deployment", "Vercel"],
     ],
   },
   {
@@ -56,8 +56,9 @@ const projectArr: ProjectArray = [
     duetime: "< 2022.10 4인 프로젝트 >",
     img: [login, main, recruit, chat, alarm],
     mainContent: [
-      " 내가 생각하는 나의 성격과 친구가 생각하는 나의 성격을 비교함으로써 겉으로 보이는 나의 모습이 어떠한지 파악해볼 수 있는 웹사이트입니다. 실제로 지인과 성격 검사를 서로 해주면서 얻은 아이디어를 바탕으로 직접 개발하였습니다.",
+      " 부트캠프의 최종 프로젝트으로 4인이서 진행한 팀 프로젝트입니다. ",
       " 백 엔드 개발자와 협업하는 과정에 관해 많이 배울 수 있었습니다. 필요한 명세를 문서로 작성하여 소통하였고, 필요한 지식도 함께 공유하며 학습할 수 있었습니다.",
+      " "
     ],
     subContent: [
       [

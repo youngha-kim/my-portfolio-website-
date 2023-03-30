@@ -25,7 +25,7 @@ const SingleProject: FunctionComponent<Project> = (props) => {
       </div>
       <div className="flex flex-col justify-items-center lg:flex-row pl-5 pr-2">
         <div className="flex justify-center basis-7/12 mb-10 lg:w-6/12 ">{useCarousel(img)}</div>
-        <div className="basis-2/4 ml-4">
+        <div className="basis-2/4 lg:pl-4">
           <div>
             {mainContent.map((element, id) => (
               <p key={id} className="mb-4 text-lg">

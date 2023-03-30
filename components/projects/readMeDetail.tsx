@@ -32,7 +32,7 @@ const ReadMeDetail = (props: ProjectDetail) => {
                 <div key={id}>{el}</div>
               ))}
             </div>
-            <h3 className="text-xl font-bold mt-4 pl-4">{`★ 주요 기능`}</h3>
+            <h3 className="text-xl font-bold mt-4 pl-4">{`★ 담당 기능`}</h3>
             <div className="text-lg ml-4 mt-2">
               {outline.mainFunction.map((el, id) => (
                 <div key={id}>{el}</div>
