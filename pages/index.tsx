@@ -39,7 +39,7 @@ function MainNavigation(props: any) {
           content="width=device-width, initial-scale=1.0 maximum-scale=1 minimum-scale=1"
         />
       </Head>
-      <main className="py-6 z-40 bg-gradient-to-r from-violet-500 to-fuchsia-500 ">
+      <main className="z-40 bg-gradient-to-r from-violet-500 to-fuchsia-500 ">
         <nav id="navBar" className="sticky top-0 flex justify-around mb-2 z-10">
           <div
             id="title"
@@ -126,7 +126,6 @@ export async function getStaticProps() {
   const archivingData  = await connectDb("archiving", "get");
   const serialAboutMe = convertToArray(Serial(aboutMeData))
   const serialArchiving = convertToArray(Serial(archivingData))
-console.log(serialArchiving)
 
   return {
     props: {

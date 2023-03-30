@@ -54,7 +54,7 @@ const SkillLists = () => {
     <>
       <main className="flex flex-col items-center m-auto max-w-2xl mt-8 md:flex-row md:justify-around">
         <div>
-          {stacks.map((element, id) => {
+          {stacks.map((element) => {
             return (
               <>
                 <section key={element.id}>
@@ -67,7 +67,7 @@ const SkillLists = () => {
           })}
         </div>
         <div>
-          {sides.map((element, id) => {
+          {sides.map((element) => {
             return (
               <>
                 <section key={element.id} className="flex-col">

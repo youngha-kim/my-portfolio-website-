@@ -1,7 +1,7 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import Layout from '@/components/layout/Layout'
-// import MainNavigation from '@/components/navBar/MainNavigation'
+import Footer from '@/components/footer'
 
 export default function App({ Component, pageProps }: AppProps) {
   
@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
     <Layout>
       <Component {...pageProps} />
-      <div>footer</div>
+      <Footer/>
     </Layout>
     </>
   )

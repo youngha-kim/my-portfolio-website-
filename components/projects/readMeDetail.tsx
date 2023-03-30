@@ -29,13 +29,13 @@ const ReadMeDetail = (props: ProjectDetail) => {
             <h2 className="text-2xl font-semibold">🟡 Outline</h2>
             <div className="text-lg ml-4 mt-4">
               {outline.description.map((el, id) => (
-                <div key={id}>{el}</div>
+                <div className="mt-4" key={id}>{el}</div>
               ))}
             </div>
-            <h3 className="text-xl font-bold mt-4 pl-4">{`★ 담당 기능`}</h3>
+            <h3 className="text-xl font-bold mt-6 pl-4">{`★ 담당 기능`}</h3>
             <div className="text-lg ml-4 mt-2">
               {outline.mainFunction.map((el, id) => (
-                <div key={id}>{el}</div>
+                <div className="mt-2" key={id}>- {el}</div>
               ))}
             </div>
           </div>
@@ -44,16 +44,16 @@ const ReadMeDetail = (props: ProjectDetail) => {
             <h2 className="text-2xl font-semibold">🟣 Background</h2>
             <div className="text-lg ml-4 mt-4">
               {background.map((el, id) => (
-                <div key={id}>{el}</div>
+                <div className="mt-4" key={id}>{el}</div>
               ))}
             </div>
           </div>
 
           <div className="mt-14">
-            <h2 className="text-2xl font-semibold">🟠 Meaning</h2>
+            <h2 className="text-2xl font-semibold">🟠 Lesson learned</h2>
             <div className="text-lg ml-4 mt-4">
               {meaning.map((el, id) => (
-                <div key={id}>{el}</div>
+                <div className="mt-4" key={id}>{el}</div>
               ))}
             </div>
           </div>
@@ -72,8 +72,7 @@ const ReadMeDetail = (props: ProjectDetail) => {
                       <div className="basis-3/4 mb-5 ml-10">
                         {el[1].map((el, id) => (
                           <div className="pl-2" key={id}>
-                            {" "}
-                            {`${el}`}{" "}
+                            {`${el}`}
                           </div>
                         ))}
                       </div>
