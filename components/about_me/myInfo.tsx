@@ -15,7 +15,7 @@ const MyInfo: FunctionComponent<Personal> = (props) => {
         <img className="w-20" src={img} />
         <div className="flex-col ml-6">
           <div className="font-black text-lg mb-2">{title}</div>
-          <div className="overflow-x-auto">{content}</div>
+          <div className="w-full">{content}</div>
           <div>{opt}</div>
         </div>
       </div>

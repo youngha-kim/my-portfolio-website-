@@ -10,7 +10,7 @@ const Footer = () => {
 
   return (
     <>
-      <div className="flex flex-col justify-center items-center -mt-2 w-full bg-gradient-to-r from-violet-500 to-fuchsia-500">
+      <div className="position flex flex-col justify-center items-center -mt-2 bg-gradient-to-r from-violet-500 to-fuchsia-500">
         <ul className="flex flex-row justify-center items-center h-30 m-0 pt-4">
           <li className={commonStyle}>
             {" "}

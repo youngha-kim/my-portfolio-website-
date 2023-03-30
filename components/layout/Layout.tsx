@@ -4,13 +4,7 @@ type props = {
   children: ReactNode;
 };
 function Layout(props: props) {
-  return (
-    <>
-      <main>
-        {props.children}
-      </main>
-    </>
-  );
+  return <>{props.children}</>;
 }
 
 export default Layout;

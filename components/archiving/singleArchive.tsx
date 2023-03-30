@@ -12,8 +12,8 @@ const SingleArchieve: FunctionComponent<Archieve> = (props) => {
   const { img, link, subtitle, content } = props;
   return (
     <>
-      <div className="text-white w-80 h-30 border-b-2">
-        {<Image src={img} alt="image" />}
+      <div className="flex justify-center relative text-white w-80 h-30 border-b-2">
+        {<Image className="min-w-96 w-fit lg:w-full" src={img} alt="image" />}
       </div>
       <Link href={link} passHref target="_blank">
         <div className="text-blue-500 font-black mt-4  hover:text-pink-400 duration-200">
