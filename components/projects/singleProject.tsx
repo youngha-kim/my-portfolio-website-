@@ -1,6 +1,7 @@
 import { StaticImageData } from "next/image";
 import { FunctionComponent } from "react";
 import useCarousel from "./hooks/useCarousel";
+import Link from "next/link";
 
 type sub = string[];
 
@@ -22,13 +23,13 @@ const SingleProject: FunctionComponent<Project> = (props) => {
         <div className="text-3xl font-black mb-5">{title}</div>
         <div>{duetime}</div>
       </div>
-      <div className="flex flex-col lg:flex-row pl-5 pr-2">
-        <div className="basis-2/4 mb-10">{useCarousel(img)}</div>
-        <div className="basis-2/4">
+      <div className="flex flex-col justify-items-center lg:flex-row pl-5 pr-2">
+        <div className="flex justify-center basis-7/12 mb-10 lg:w-6/12 ">{useCarousel(img)}</div>
+        <div className="basis-2/4 ml-4">
           <div>
             {mainContent.map((element, id) => (
               <p key={id} className="mb-4 text-lg">
-                {(element)}
+                {element}
               </p>
             ))}
           </div>
@@ -48,7 +49,20 @@ const SingleProject: FunctionComponent<Project> = (props) => {
             {subContent.map((element, id) => (
               <div key={id} className="flex mb-3 sm:flex-row flex-col">
                 <span className="font-bold basis-1/4 mb-2">[{element[0]}]</span>
-                <span className="basis-3/4 sm: mb-5">{element[1]}</span>
+                <ul className="basis-3/4 sm: mb-5">
+                  {element[1].split(",").map((el) => {
+                    if (el.includes("http")) {
+                      return (
+                        <Link key={el} href={el} passHref target="_blank">
+                          <div className="text-blue-500 font-black hover:text-pink-400 duration-200">
+                            { " Link "}
+                          </div>
+                        </Link>
+                      );
+                    }
+                    return <li className="w-62" key={el}>{el}</li>;
+                  })}
+                </ul>
               </div>
             ))}
           </div>

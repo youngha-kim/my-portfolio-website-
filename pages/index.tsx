@@ -33,7 +33,7 @@ function MainNavigation(props: any) {
   return (
     <>
       <Head>
-        <title>youngha&apos; portfolio</title>
+        <title>youngha&apos;s portfolio</title>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0 maximum-scale=1 minimum-scale=1"
@@ -45,7 +45,7 @@ function MainNavigation(props: any) {
             id="title"
             className="font-mono w-80 rounded px-4 py-2 text-2xl text-[#e0dee8]"
           >
-            youngha&apos; Portfolio
+            youngha&apos;s Portfolio
           </div>
 
           <div className="flex items-center ">

@@ -41,12 +41,11 @@ const projectArr: ProjectArray = [
     ],
     subContent: [
       [
-        "주요기능",
-        "어떠고 저쩌고 하기 blar   blar   blar   blar   blarblar   blar   blar   blar   blarblar   blar   blar   blar   blarblar   blar   blar   blar   blarblar   blar   blar   blar   blarblar   blar   blar   blar   blarblar   blar   blar   blar   blarblar   blar   blar   blar   blar",
+        "주요기능","간단한 자기소개, 인적사항, 기술스택, Github 및 노션 링크, 프로젝트 경험, 데이터 CRUD"
       ],
       ["Github", "https://github.com/youngha-kim/my-portfolio-website-"],
       ["URL", "https://my-portfolio-website-mu.vercel.app/"],
-      ["Frontend", "next.js, typescript, tailwind css "],
+      ["Frontend", "Next.js, Typescript, Tailwind css "],
       ["DB", "mongoDB"],
       ["Deployment", "vercel"],
     ],
@@ -63,11 +62,11 @@ const projectArr: ProjectArray = [
     subContent: [
       [
         "주요기능",
-        "blar   blar   blar   blar   blarblar   blar   blar   blar   blarblar   blar   blar   blar   blarblar   blar   blar   blar   blarblar   blar   blar   blar   blarblar   blar   blar   blar   blarblar   blar   blar   blar   blarblar   blar   blar   blar   blarblar   blar   blar   blar   blarblar   blar   blar   blar   blar",
+        "위치 정보를 토대로 3km 이내 생성된 스터디들 조회, 원하는 스터디 가입 또는 스터디원 모집, 스터디원들 간의 실시간 채팅 기능, 전체 게시판 기능",
       ],
       ["Github", "https://github.com/SEB-team44/woodongs/tree/fe-production"],
-      ["URL", "www.woodongs.site"],
-      ["Frontend", "React.js, contextAPI, WebsocketAPI, styled-components "],
+      ["URL", "https://woodongs.site"],
+      ["Frontend", "React.js, ContextAPI, WebsocketAPI, Styled-components "],
       ["DB", "AWS"],
       ["Deployment", "AWS"],
     ],

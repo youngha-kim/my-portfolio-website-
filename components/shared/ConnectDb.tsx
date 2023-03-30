@@ -1,5 +1,4 @@
 import { MongoClient } from "mongodb";
-
 require('dotenv').config();
 
 const useConnectDb = async (
