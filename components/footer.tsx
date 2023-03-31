@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const Footer = () => {
   const commonStyle =
-    "pl-3 pr-3 w-24 hover:w-32 hover:animate-spin-slow ease-in-out duration-200";
+    "pl-3 pr-3 w-20 hover:animate-spin-slow ease-in-out duration-200";
 
   return (
     <>

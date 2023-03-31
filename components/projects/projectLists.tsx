@@ -31,7 +31,7 @@ const projectArr: ProjectArray = [
     id: 1,
     title: "포트폴리오 웹사이트",
     duetime: "< 2023.03 개인 프로젝트 >",
-    img: [archiving, intro, aboutme, skills],
+    img: [archiving, intro, aboutme, skills,],
     mainContent: [
       " 처음으로 진행했던 단독 프로젝트 입니다. 보는 이로 하여금, `어떻게 하면 쉽게 읽힐 수 있을까`에 대한 부분들을 고민하며 개발하였습니다.",
       " 폴더 구조의 세분화, 컴포넌트를 구분하는 기준을 스스로 정의하면서, 세세한 부분들을 생각해보고 적용하며 차분히 개발을 할 수 있었습니다. 특히 하드코딩을 피하는 것과 코드의 길이는 줄이는 것을 우선순위로 삼은 결과, useCustom hook을 사용하는 것에 익숙해 진 계기가 되었습니다.",
@@ -47,29 +47,30 @@ const projectArr: ProjectArray = [
       ["URL", "https://my-portfolio-website-mu.vercel.app/"],
       ["Frontend", "Next.js, Typescript, Tailwind css "],
       ["DB", "MongoDB Atlas"],
-      ["Deployment", "Vercel"],
+      ["Deploy", "Vercel"],
     ],
   },
   {
     id: 2,
     title: "우리동네 스터디 Woodongs",
     duetime: "< 2022.10 4인 프로젝트 >",
-    img: [login, main, recruit, chat, alarm],
+    img: [login, main, mypage, recruit, chat, alarm],
     mainContent: [
-      " 부트캠프의 최종 프로젝트으로 4인이서 진행한 팀 프로젝트입니다. ",
-      " 백 엔드 개발자와 협업하는 과정에 관해 많이 배울 수 있었습니다. 필요한 명세를 문서로 작성하여 소통하였고, 필요한 지식도 함께 공유하며 학습할 수 있었습니다.",
-      " "
+      " 부트캠프의 최종 프로젝트으로 4인이서 진행한 팀 프로젝트입니다. 백엔드 개발자와 협업하면서 명확한 명세를 문서로 작성하여 원활한 소통을 유지하였고, 서로 필요한 지식을 공유하며 함께 학습하는 경험을 통해 많은 것을 배울 수 있었습니다.",
+      " 웹소켓 프로토콜을 사용하여 채팅 및 알림 기능을 구현하면서 실시간 통신에 대한 내용을 새로 배웠으며, 이러한 기술을 활용하면 더 다양한 기능을 구현할 수 있다는 기대감을 갖게 되었습니다.",
+      " Geolocation API와 같은 웹 API를 사용해 보면서, 비동기 처리가 사용자 경험에 얼마나 중요한 영향을 미치는지 더욱 명확하게 인지할 수 있었습니다. 이는 막연한 지식에서 벗어나 직접 경험을 통해 깨닫게 된 중요한 점이었습니다.",
+      " 회원가입과 로그인 기능을 구현하면서, Oauth와 JWT에 대한 이해도를 보다 깊게 느낄 수 있었습니다. 실제로 이러한 기능을 구현해 보면서, 이들이 어떻게 흘러가고 연계되는지에 대한 이해도가 높아졌습니다. "
     ],
     subContent: [
       [
         "주요기능",
-        "위치 정보를 토대로 3km 이내 생성된 스터디들 조회, 원하는 스터디 가입 또는 스터디원 모집, 스터디원들 간의 실시간 채팅 기능, 전체 게시판 기능",
+        "내 위치를 토대로 3km 이내 생성된 스터디들 조회, 원하는 스터디 가입 또는 스터디원 모집, 스터디원들 간의 실시간 채팅 기능, 전체 게시판 기능",
       ],
       ["Github", "https://github.com/SEB-team44/woodongs/tree/fe-production"],
       ["URL", "https://woodongs.site"],
       ["Frontend", "React.js, ContextAPI, WebsocketAPI, Styled-components "],
       ["DB", "AWS"],
-      ["Deployment", "AWS"],
+      ["Deploy", "AWS"],
     ],
   },
 ];
