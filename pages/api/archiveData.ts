@@ -9,7 +9,6 @@ export default async function handler(
   if (req.method === "POST") {
     const data = req.body;
     data.content = data.content.split("+")
-
-    const result = await ConnectDb("archiving", "post", data, res)
+    await ConnectDb("archiving", "post", data, res)
   }
 }

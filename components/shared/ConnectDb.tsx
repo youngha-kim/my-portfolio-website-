@@ -1,5 +1,5 @@
 import { MongoClient } from "mongodb";
-require('dotenv').config();
+require("dotenv").config();
 
 const useConnectDb = async (
   input: string,
@@ -13,23 +13,27 @@ const useConnectDb = async (
   );
   const db = client.db();
   const collection = db.collection(input);
-
-  if (crud === "get") {
-    if (paramid) {
-      const importData = await collection.find({ title: paramid }).toArray();
-      data = importData;
-    } else {
-      const importData = await collection.find({}).toArray();
-      data = importData;
+  try {
+    if (crud === "get") {
+      if (paramid) {
+        const importData = await collection.find({ title: paramid }).toArray();
+        data = importData;
+      } else {
+        const importData = await collection.find({}).toArray();
+        data = importData;
+      }
     }
+
+    if (crud === "post") {
+      if (paramid) {
+        data = await collection.insertOne(paramid);
+        res.status(200).json(data);
+      }
+    }
+  } catch (error) {
+    alert(error);
   }
 
-  if (crud === "post") {
-    if (paramid) {
-      data = await collection.insertOne(paramid);
-      res.status(200).json(data);
-    }
-  }
   client.close();
 
   return data;

@@ -24,7 +24,6 @@ const convertToArray = (input: any) => {
   return array;
 };
 
-
 function MainNavigation(props: any) {
   const { hoverColor } = useChangeNavstyle();
   const { element, moveToScroll, isOpen, setIsOpen } = useMoveScroll();
@@ -122,10 +121,10 @@ function Home(props: any) {
 
 export async function getStaticProps() {
   // fetch data from an API
-  const aboutMeData  = await connectDb("initialDatas", "get");
-  const archivingData  = await connectDb("archiving", "get");
-  const serialAboutMe = convertToArray(Serial(aboutMeData))
-  const serialArchiving = convertToArray(Serial(archivingData))
+  const aboutMeData = await connectDb("initialDatas", "get");
+  const archivingData = await connectDb("archiving", "get");
+  const serialAboutMe = convertToArray(Serial(aboutMeData));
+  const serialArchiving = convertToArray(Serial(archivingData));
 
   return {
     props: {
