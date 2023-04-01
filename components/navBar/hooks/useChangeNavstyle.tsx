@@ -22,7 +22,6 @@ const useChangePosition = () => {
       if (scrollTop > SCROLL_MIN) {
         navStyle.backgroundColor = "white";
         navStyle.background = `linear-gradient(90deg, #82deea ${curLocatePercent}%, white 0%)`;
-        // navStyle.background = `animate-spin-slow`;
         titleStyle.color = "black";
         setHoverColor(defaultStyle + "hover:text-red-400");
       } else {

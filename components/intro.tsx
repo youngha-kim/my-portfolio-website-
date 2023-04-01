@@ -18,7 +18,7 @@ const Intro = () => {
           <br />
           동작원리를 파악하는 것을 좋아하는 프론트엔드 개발자 입니다
           <br />
-          항상 best-practice를 찾기 위해 고뇌합니다.
+          항상 best-practice를 찾기 위해 고민합니다.
         </p>
         <button className="border-2 border-white mt-14 mb-10 rounded-xl bg-gradient-to-br from-[#e070e6] to-[#6025F5] px-10 py-6 text-base font-medium text-white transition duration-200 hover:shadow-lg hover:shadow-[#6025F5]/100 ">
           더 알아보기

@@ -85,4 +85,3 @@ const SkillLists = () => {
 };
 
 export default SkillLists;
-
