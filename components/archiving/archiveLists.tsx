@@ -21,7 +21,7 @@ const ArchiveList = (props : any) => {
             <>
               <div
                 key={element.id}
-                className="border-black border-4 bg-white m-10 p-6 max-h-fit w-full max-w-full rounded-2xl shadow-2xl "
+                className="border-black border-4 bg-white m-10 p-6 max-h-fit max-w-fit max-w-full rounded-2xl shadow-2xl "
               >
                
                 <SingleArchieve

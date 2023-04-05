@@ -38,7 +38,7 @@ function MainNavigation(props: any) {
           content="width=device-width, initial-scale=1.0 maximum-scale=1 minimum-scale=1"
         />
       </Head>
-      <main className="w-full z-40 bg-[#3C6997] border-2 border-black">
+      <main className="w-full z-40 bg-[#3C6997]">
         <nav id="navBar" className="sticky top-0 flex justify-around mb-2 z-10">
           <div
             id="title"
@@ -71,7 +71,7 @@ function MainNavigation(props: any) {
 
         {isOpen ? (
           <>
-            <div className="sticky bg-white opacity-90 w-full transition duration-200 ease-out sm:ease-in flex flex-col block sm:hidden top-12 z-10">
+            <div className="sticky bg-white border-2 opacity-90 w-full transition duration-200 ease-out sm:ease-in flex flex-col block sm:hidden top-12 z-10">
               {NavCategories?.map((element, id) => {
                 return (
                   <>

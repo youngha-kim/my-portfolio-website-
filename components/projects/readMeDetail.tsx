@@ -14,7 +14,7 @@ const ReadMeDetail = (props: ProjectDetail) => {
     <>
       <div className="max-w-10xl w-fit">
         <nav className="bg-black text-white p-5 sm:pl-20 text-xl">READ_ME</nav>
-        <section className="bg-white p-10 sm:p-20 pt-10 rounded-2xl shadow-2xl text-basic">
+        <section className="bg-white p-10 sm:p-20 pt-10 rounded-2xl  text-basic">
           <h1 className="text-3xl mb-10 font-bold">{title}</h1>
           <hr></hr>
           <div className="mt-5">

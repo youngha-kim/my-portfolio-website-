@@ -18,7 +18,7 @@ const SinglSkill: FunctionComponent<Skill> = (props) => {
       <ul>
         {imgs.map((element, id) => {
           return (
-            <li key={id} className="mt-6 w-60">
+            <li key={id} className="mt-6 sm:w-60">
               <Image src={element} alt={stack} placeholder="blur" />
             </li>
           );
