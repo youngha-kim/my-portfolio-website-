@@ -38,7 +38,7 @@ function MainNavigation(props: any) {
           content="width=device-width, initial-scale=1.0 maximum-scale=1 minimum-scale=1"
         />
       </Head>
-      <main className="w-full z-40 bg-gradient-to-r from-violet-500 to-fuchsia-500 ">
+      <main className="w-full z-40 bg-[#3C6997] border-2 border-black">
         <nav id="navBar" className="sticky top-0 flex justify-around mb-2 z-10">
           <div
             id="title"

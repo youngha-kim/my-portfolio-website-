@@ -12,7 +12,7 @@ const SingleArchieve: FunctionComponent<Archieve> = (props) => {
   const { img, link, subtitle, content } = props;
   return (
     <>
-      <div className="flex justify-center relative text-white w-80 h-30 border-b-2">
+      <div className="flex justify-center relative text-white w-80 h-30 border-b-4 border-black">
         {<Image className="min-w-96 w-fit lg:w-full" src={img} alt="image" />}
       </div>
       <Link href={link} passHref target="_blank">
@@ -20,7 +20,7 @@ const SingleArchieve: FunctionComponent<Archieve> = (props) => {
           {`-` + " Move To Traveling " + "-"}
         </div>
       </Link>
-      <div className="mt-4 mb-4 font-semibold">{subtitle} 입니다.</div>
+      <div className="mt-4 mb-4 font-semibold">{subtitle}</div>
       <div>
         {content.map((element) => {
           return (

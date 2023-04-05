@@ -47,12 +47,12 @@ const sides: StacksArray = [
 ];
 
 const componentStyle =
-  "border-2 bg-white m-10 p-10 max-h-fit max-w-fit rounded-2xl shadow-2xl hover:shadow-cyan-200 ease-in duration-300";
+  "border-4 border-black border-2 bg-white m-10 p-10 max-h-fit max-w-fit rounded-2xl shadow-2xl hover:shadow-cyan-200 ease-in duration-300 ";
 
 const SkillLists = () => {
   return (
     <>
-      <main className="flex flex-col items-center m-auto max-w-2xl mt-8 md:flex-row md:justify-around">
+      <main className="flex flex-col items-center m-auto max-w-2xl mt-8 md:flex-row md:justify-around ">
         <div>
           {stacks.map((element) => {
             return (

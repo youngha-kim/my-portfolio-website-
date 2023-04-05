@@ -11,10 +11,10 @@ const SinglSkill: FunctionComponent<Skill> = (props) => {
   const { stack, imgs } = props;
   return (
     <>
-      <div className="font-orange-200 text-center text-orange-600 text-2xl font-black mb-6">
+      <div className="font-orange-200 text-center text-[#EB5858] text-2xl font-black mb-6">
         {stack}
       </div>
-      <hr/>
+      <hr className="border-black border-2"/>
       <ul>
         {imgs.map((element, id) => {
           return (

@@ -1,7 +1,7 @@
 const Intro = () => {
   return (
     <>
-    <div className="position bg-gradient-to-r from-violet-500 to-fuchsia-500">
+    <div className="position bg-[#3C6997] border-black border-b-2">
       <div className="flex-col items-center text-center">
         <div className="font text-5xl text-white pt-2 font-black">
           <p> - 김영하 -</p>
@@ -20,7 +20,7 @@ const Intro = () => {
           <br />
           항상 best-practice를 찾기 위해 고민합니다.
         </p>
-        <button className="border-2 border-white mt-14 mb-10 rounded-xl bg-gradient-to-br from-[#e070e6] to-[#6025F5] px-10 py-6 text-base font-medium text-white transition duration-200 hover:shadow-lg hover:shadow-[#6025F5]/100 ">
+        <button className="border-2 border-white mt-14 mb-10 rounded-xl bg-[#3C6997] px-10 py-6 text-base font-medium text-white transition duration-200 hover:shadow-lg hover:shadow-[#d77f8d]/100 ">
           더 알아보기
         </button>
       </div>

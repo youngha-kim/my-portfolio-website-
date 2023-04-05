@@ -35,7 +35,7 @@ const useCarousel = (imgs: StaticImageData[]) => {
             return (
               <SwiperSlide key={id} className="-z-100 ">
                 <div className="flex justify-center object-fill relative z-0">
-                  <Image className="min-w-96 max-h-96 max-w-sm  lg:max-h-full lg:max-w-full overflow-hidden border-2 border-black" key={id} src={element} alt="image" />
+                  <Image className="min-w-96 max-h-96 max-w-sm  lg:max-h-full lg:max-w-full overflow-hidden border-4 border-black" key={id} src={element} alt="image" />
                 </div>
               </SwiperSlide>
             )

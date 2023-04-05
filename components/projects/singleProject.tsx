@@ -39,12 +39,12 @@ const SingleProject: FunctionComponent<Project> = (props) => {
               <span className="text-lg">READ_ME</span>
             </a>
             <span className="relative flex h-4 w-4">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-4 w-4 bg-red-500"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#EB5858] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-4 w-4 bg-[#EB5858]"></span>
             </span>
           </button>
 
-          <hr></hr>
+          <hr className="border-black border-2"></hr>
           <div className="mt-4">
             {subContent.map((element, id) => (
               <div key={id} className="flex mb-3 sm:flex-row flex-col">

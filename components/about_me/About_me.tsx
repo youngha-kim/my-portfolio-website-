@@ -12,7 +12,7 @@ interface Personal {
 const About_me = ( props : any) => {
   const aboutMe = props.aboutMe;
   return (
-    <article className="bg-white pt-20 pb-10 m-auto max-w-10xl">
+    <article className="bg-[#FAB9B9] border-b-2 border-black bg-white pt-20 pb-10 m-auto max-w-10xl">
       <div className="mb-20">
         <Subtitle title={"About me"} txtColor={"text-black"} />
       </div>

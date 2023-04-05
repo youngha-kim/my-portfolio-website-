@@ -15,13 +15,13 @@ const ArchiveList = (props : any) => {
 
   return (
     <>
-      <div className="flex flex-col items-center m-auto max-w-4xl mt-8 md:flex-row md:justify-around">
+      <div className=" flex flex-col items-center m-auto max-w-4xl mt-8 md:flex-row md:justify-around">
         {archiving?.map((element : Archieve) => {
           return (
             <>
               <div
                 key={element.id}
-                className=" border-2 bg-white m-10 p-6 max-h-fit w-full max-w-full rounded-2xl shadow-2xl "
+                className="border-black border-4 bg-white m-10 p-6 max-h-fit w-full max-w-full rounded-2xl shadow-2xl "
               >
                
                 <SingleArchieve
