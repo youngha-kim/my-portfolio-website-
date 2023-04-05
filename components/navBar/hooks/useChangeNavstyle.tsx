@@ -11,8 +11,9 @@ const useChangePosition = () => {
     const handleScroll = () => {
       const scrollTop = document.documentElement.scrollTop;
       const maxHeight = document.documentElement.scrollHeight;
-      const curLocatePercent = Math.floor((scrollTop / maxHeight) * 100 + 14);
+      const innerHeight = window.innerHeight
 
+      const curLocatePercent = Math.floor((scrollTop / (maxHeight-innerHeight)) * 100);
       const navElement = document.getElementById("navBar");
       const navStyle = navElement!.style;
 

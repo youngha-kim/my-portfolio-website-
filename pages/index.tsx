@@ -98,8 +98,7 @@ function MainNavigation(props: any) {
 }
 
 function Home(props: any) {
-  const { element } = props;
-  const { aboutMe, archiving } = props;
+  const {element, aboutMe, archiving } = props;
   return (
     <div className="flex-col mb-2">
       <Intro />
