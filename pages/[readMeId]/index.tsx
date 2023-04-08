@@ -30,7 +30,7 @@ export const getStaticProps: GetStaticProps = async (
   const  SerialedReadMe  =  Serial(data[0]);
 
   return {
-    props: SerialedReadMe ,
+    props: SerialedReadMe,
   };
 };
 

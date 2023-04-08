@@ -14,11 +14,6 @@ const useChangePosition = () => {
       const innerHeight = window.innerHeight
 
       const curLocatePercent = Math.ceil((scrollTop / (Math.floor(maxHeight-innerHeight))) * 100);
-      // const curLocatePercent = Math.floor((scrollTop+innerHeight))
-      // console.log("st",scrollTop)
-      // console.log("mh",maxHeight)
-      // console.log("ih",innerHeight)
-
       const navElement = document.getElementById("navBar");
       const navStyle = navElement!.style;
 
@@ -30,7 +25,6 @@ const useChangePosition = () => {
         navStyle.background = `linear-gradient(90deg, #d77f8d ${curLocatePercent}%, white 0%)`;
         navStyle.borderColor="black"
         navStyle.borderBottomWidth="2px"
-        console.log(navStyle)
         titleStyle.color = "black";
         setHoverColor(defaultStyle + "hover:text-[#3C6997]");
       } else {
