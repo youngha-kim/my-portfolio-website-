@@ -1,6 +1,7 @@
 import { ProjectDetail } from "../../pages/[readMeId]/index";
 import useDetail from "./hooks/useDetail";
 import Link from "next/link";
+import empasizeText from "../shared/empasizeText";
 
 const ReadMeDetail = (props: ProjectDetail) => {
   const { title, deployment, outline, background, meaning, stacks } = props;
@@ -35,16 +36,16 @@ const ReadMeDetail = (props: ProjectDetail) => {
               <div className="text-lg ml-4 mt-4">
                 {outline.description.map((el, id) => (
                   <div className="mt-4" key={id}>
-                    {el}
+                    {empasizeText(el)}
                   </div>
                 ))}
               </div>
               <h3 className="text-xl font-bold mt-6 pl-4">{`★ 담당 기능`}</h3>
               <div className="text-lg ml-4 mt-2">
                 {outline.mainFunction.map((el, id) => (
-                  <div className="mt-2" key={id}>
-                    - {el}
-                  </div>
+                  <li className="mt-2" key={id}>
+                    {empasizeText(el)}
+                  </li>
                 ))}
               </div>
             </div>
@@ -54,7 +55,7 @@ const ReadMeDetail = (props: ProjectDetail) => {
               <div className="text-lg ml-4 mt-4">
                 {background.map((el, id) => (
                   <div className="mt-4" key={id}>
-                    {el}
+                    {empasizeText(el)}
                   </div>
                 ))}
               </div>
@@ -65,7 +66,7 @@ const ReadMeDetail = (props: ProjectDetail) => {
               <div className="text-lg ml-4 mt-4">
                 {meaning.map((el, id) => (
                   <div className="mt-4" key={id}>
-                    {el}
+                    {empasizeText(el)}
                   </div>
                 ))}
               </div>
@@ -85,7 +86,7 @@ const ReadMeDetail = (props: ProjectDetail) => {
                         <div className="basis-3/4 mb-5 ml-10">
                           {el[1].map((el, id) => (
                             <div className="pl-2" key={id}>
-                              {`${el}`}
+                              {empasizeText(el)}
                             </div>
                           ))}
                         </div>

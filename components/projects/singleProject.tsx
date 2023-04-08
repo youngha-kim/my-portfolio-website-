@@ -2,7 +2,7 @@ import { StaticImageData } from "next/image";
 import { FunctionComponent } from "react";
 import useCarousel from "./hooks/useCarousel";
 import Link from "next/link";
-
+import empasizeText from "../shared/empasizeText";
 type sub = string[];
 
 interface Project {
@@ -29,7 +29,7 @@ const SingleProject: FunctionComponent<Project> = (props) => {
           <div>
             {mainContent.map((element, id) => (
               <p key={id} className="mb-4 text-lg">
-                {element}
+                {empasizeText(element)}
               </p>
             ))}
           </div>
