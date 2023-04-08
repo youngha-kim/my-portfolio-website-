@@ -3,6 +3,7 @@ import { FunctionComponent } from "react";
 import useCarousel from "./hooks/useCarousel";
 import Link from "next/link";
 import empasizeText from "../shared/empasizeText";
+import makeFontColor  from "../shared/makefontColor";
 type sub = string[];
 
 interface Project {
@@ -16,6 +17,7 @@ interface Project {
 
 const SingleProject: FunctionComponent<Project> = (props) => {
   const { title, duetime, img, mainContent, subContent } = props;
+  makeFontColor()
 
   return (
     <>

@@ -11,6 +11,8 @@ const ReadMeDetail = (props: ProjectDetail) => {
   const moveToOuter = (deployment: string) => {
     return window.location.replace(deployment);
   };
+
+
   return (
     <>
       <div className="max-w-10xl w-fit">
