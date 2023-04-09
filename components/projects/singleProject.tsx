@@ -3,7 +3,7 @@ import { FunctionComponent } from "react";
 import useCarousel from "./hooks/useCarousel";
 import Link from "next/link";
 import empasizeText from "../shared/empasizeText";
-import makeFontColor  from "../shared/makefontColor";
+import useFontColor  from "./hooks/usefontColor";
 type sub = string[];
 
 interface Project {
@@ -17,7 +17,7 @@ interface Project {
 
 const SingleProject: FunctionComponent<Project> = (props) => {
   const { title, duetime, img, mainContent, subContent } = props;
-  makeFontColor()
+  useFontColor()
 
   return (
     <>
@@ -49,7 +49,7 @@ const SingleProject: FunctionComponent<Project> = (props) => {
           <hr className="border-black border-2"></hr>
           <div className="mt-4">
             {subContent.map((element, id) => (
-              <div key={id} className="flex mb-3 sm:flex-row flex-col">
+              <div key={id} className="flex  sm:flex-row flex-col">
                 <span className="font-bold basis-1/4 mb-2">[{element[0]}]</span>
                 <ul className="basis-3/4 sm: mb-5">
                   {element[1].split(",").map((el) => {
