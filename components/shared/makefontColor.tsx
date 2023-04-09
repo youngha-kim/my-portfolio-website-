@@ -1,6 +1,6 @@
 import { useEffect } from "react"
 
-const makeFontColor = () => {
+const useFontColor = () => {
   useEffect(()=>{
     const strongElements = document!.getElementsByTagName("strong")
     for(let i = 0 ; i < strongElements.length ; i++){
@@ -9,4 +9,4 @@ const makeFontColor = () => {
   },[])
 }
 
-export default makeFontColor
+export default useFontColor
